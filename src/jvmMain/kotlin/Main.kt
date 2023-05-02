@@ -1,52 +1,51 @@
-import org.apache.commons.lang3.SystemUtils
-import java.io.BufferedReader
-import java.io.IOException
-import java.io.InputStreamReader
-import java.util.*
+import java.lang.RuntimeException
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 
-
+var port : String = ""
+var token : String = ""
 object Example {
     @JvmStatic
     fun main(args: Array<String>) {
-        println(SystemUtils.OS_NAME)
-        val cmd = "ps -A" // | grep LeagueClientUx"
-        val rt = Runtime.getRuntime()
-        val proc = rt.exec(cmd)
-
-        val stdInput = BufferedReader(InputStreamReader(proc.inputStream))
-
-        val stdError = BufferedReader(InputStreamReader(proc.errorStream))
-
-// Read the output from the command
-
-// Read the output from the command
-        println("Here is the standard output of the command:\n")
-        var s: String?
-        while (stdInput.readLine().also { s = it } != null) {
-            println(s)
-            println()
-        }
-
-// Read any errors from the attempted command
-
-// Read any errors from the attempted command
-        println("Here is the standard error of the command (if any):\n")
-        while (stdError.readLine().also { s = it } != null) {
-            println(s)
-        }
+        val data = GetAuthData().getData()
+        print(data)
+//        if ("Mac OS X" == SystemUtils.OS_NAME) {
+//            println(SystemUtils.OS_NAME)
+//            val rt = Runtime.getRuntime()
+//            val proc = rt.exec("ps -A")
+//            val stdInput = BufferedReader(InputStreamReader(proc.inputStream))
+//            val collect = stdInput.lines()
+//                .filter { it.contains("LeagueClientUx") }
+//                .collect(Collectors.toList())
+//
+//            port = getPort(collect)
+//            token = getToken(collect)
+//            println(port)
+//            println(token)
+//        }
+//        //todo windows
     }
 
-    fun execCmd(cmd: String?): String? {
-        var result: String? = null
-        try {
-            Runtime.getRuntime().exec(cmd).inputStream.use { inputStream ->
-                Scanner(inputStream).useDelimiter("\\A").use { s ->
-                    result = if (s.hasNext()) s.next() else null
-                }
+
+    private fun getPort(collect : List<String>) : String {
+        val pattern: Pattern = Pattern.compile("--app-port=([0-9]*)")
+        for (s in collect) {
+            val matcher: Matcher = pattern.matcher(s)
+            if (matcher.find()) {
+                return matcher.group(1)
             }
-        } catch (e: IOException) {
-            e.printStackTrace()
         }
-        return result
+        throw RuntimeException("Не удалось установить порт")
+    }
+
+    private fun getToken(collect : List<String>) : String {
+        val pattern: Pattern = Pattern.compile("--remoting-auth-token=([\\w-]*)")
+        for (s in collect) {
+            val matcher: Matcher = pattern.matcher(s)
+            if (matcher.find()) {
+                return matcher.group(1)
+            }
+        }
+        throw RuntimeException("Не удалось установить токен")
     }
 }

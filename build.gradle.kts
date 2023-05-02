@@ -28,7 +28,8 @@ kotlin {
                 implementation("com.merakianalytics.orianna:orianna:4.0.0-rc8")
                 //  для системных утилит
                 implementation("org.apache.commons:commons-lang3:3.12.0")
-
+                // для http запросов
+                implementation("org.apache.httpcomponents:httpclient:4.5.14")
             }
         }
         val jvmTest by getting

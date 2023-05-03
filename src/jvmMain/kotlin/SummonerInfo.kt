@@ -1,0 +1,3 @@
+class SummonerInfo {
+
+}

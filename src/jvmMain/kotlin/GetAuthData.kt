@@ -7,7 +7,6 @@ import java.util.regex.Pattern
 import java.util.stream.Collectors
 
 class GetAuthData {
-
     fun getData() : Map<String, String> {
         if ("Mac OS X" == SystemUtils.OS_NAME) {
             println(SystemUtils.OS_NAME)

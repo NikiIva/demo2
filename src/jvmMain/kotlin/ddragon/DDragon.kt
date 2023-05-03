@@ -112,10 +112,3 @@ data class Skin(var id: String?,
 data class Passive(var name: String?,
                    var description: String?,
                    var image: ChampionImage?)
-
-
-
-
-
-
-

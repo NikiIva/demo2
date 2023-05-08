@@ -19,7 +19,7 @@ object GetAllChampionsService {
             val request = HttpGet(url)
             httpClient.execute(request).use { response ->
                 if (response.statusLine.statusCode != 200) {
-                    throw RuntimeException("Не удалось получить списко чемпионов")
+                    throw RuntimeException("Не удалось получить список чемпионов")
                 }
                 val entity = response.entity
                 if (entity != null) {

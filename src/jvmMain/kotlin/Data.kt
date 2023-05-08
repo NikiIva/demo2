@@ -7,10 +7,11 @@ import org.apache.http.impl.client.BasicCredentialsProvider
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
 
-
 class Data {
-    fun getAllChampionsData(){
 
+    fun getSummonerInfoById(id:String) : String{
+        val data = GetAuthData().getData()
+        return getData("lol-summoner/v1/summoners/$id", data["port"], data["token"])
     }
 
     fun getSession():String {

@@ -1,21 +1,54 @@
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
+import ddragon.Champion
+import pastebin.GetAllChampionsService
+import java.util.stream.Collectors
 
 object Example {
     @JvmStatic
     fun main(args: Array<String>) {
-        val session = mockSession()
+        val session = Data().getSession()
         print(session)
         val mapper = ObjectMapper()
-        val jsonNode: JsonNode = mapper.readTree(session)
+        var jsonNode: JsonNode = mapper.readTree(session)
         val benchChampionIds = BenchChampions().getBenchChampionIds(jsonNode)
         val allies = AlliesData().getAllies(jsonNode)
-        println(allies)
+        for (ally in allies) {
+            jsonNode = mapper.readTree(Data().getSummonerInfoById(ally.summonerId))
+            ally.summonerName = jsonNode.get("displayName").textValue()
+        }
+        val champions = GetAllChampionsService.allChampions.champions
+        for (champion in champions) {
+            if (champion.key in benchChampionIds
+                || champion.key in allies.stream()
+                    .map{ it.championId }
+                    .collect(Collectors.toList())){
+                println("qwe")
+                println(champion)
+            }
+        }
+        val uiRow = ArrayList<UIRow>()
+        for (ally in allies) {
+            uiRow.add(UIRow(ally, getChampionById(ally.championId, champions)))
+        }
+        for (benchId in benchChampionIds){
+            uiRow.add(UIRow(null, getChampionById(benchId, champions)))
+        }
+        for (row in uiRow){
+            println(row)
+        }
+//        println(allies)
 //        print(benchChampionIds)
 //        print(session)
 //        auth.getData("lol-summoner/v1/current-summoner", "57587", "qYeyPe39_Jz-3UWk_cjDew")
     }
 
+    fun getChampionById(id :String, champions : ArrayList<Champion>) : Champion{
+        return champions.stream()
+            .filter { it.key == id }
+            .findAny()
+            .orElseThrow { RuntimeException("Не удалось найти чемпиона с key = $id") }
+    }
 
 }
 

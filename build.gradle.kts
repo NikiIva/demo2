@@ -15,6 +15,8 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
 }
 
+
+
 kotlin {
     jvm {
         jvmToolchain(11)
@@ -25,21 +27,33 @@ kotlin {
             dependencies {
                 implementation(compose.desktop.currentOs)
                 //orianna api
-                implementation("com.merakianalytics.orianna:orianna:4.0.0-rc8")
+//                implementation("com.merakianalytics.orianna:orianna:4.0.0-rc8")
                 //  для системных утилит
                 implementation("org.apache.commons:commons-lang3:3.12.0")
                 // для http запросов
                 implementation("org.apache.httpcomponents:httpclient:4.5.14")
                 // для работы с JSON (POJO <-> JSON)
                 implementation("com.fasterxml.jackson.core:jackson-core:2.15.0")
+                // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+                implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
+
                 // для работы с JSON
                 implementation("com.google.code.gson:gson:2.10.1")
+                // https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core-jvm
+                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
 
             }
         }
         val jvmTest by getting
     }
 }
+
+//tasks {
+//    // Use the native JUnit support of Gradle.
+//    "test"(Test::class) {
+//        useJUnitPlatform()
+//    }
+//}
 
 compose.desktop {
     application {

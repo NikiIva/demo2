@@ -7,7 +7,7 @@ import java.util.stream.Collectors
 object Example {
     @JvmStatic
     fun main(args: Array<String>) {
-        val session = Data().getSession()
+        val session = mockSession()//Data().getSession()
         print(session)
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)

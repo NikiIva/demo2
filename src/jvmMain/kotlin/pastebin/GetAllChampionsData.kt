@@ -33,7 +33,7 @@ object GetAllChampionsService {
     val allChampions: AllChampions
         get() {
             val allChampionsStringData: String? =
-                getClosableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json")
+                getClosableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json") //todo 13.4.1 научиться менять
             val readValue = ObjectMapper().readValue(
                 allChampionsStringData,
                 JsonNode::class.java

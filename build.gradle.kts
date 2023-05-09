@@ -1,5 +1,10 @@
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.psi.psiUtil.checkReservedPrefixWord
+import java.util.*
 
 plugins {
     kotlin("multiplatform")
@@ -23,6 +28,13 @@ kotlin {
         withJava()
     }
     sourceSets {
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+                implementation(kotlin("test-annotations-common"))
+//                implementation("org.spekframework.spek2:spek-dsl-common:$spek2Version")
+            }
+        }
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
@@ -40,13 +52,38 @@ kotlin {
                 // для работы с JSON
                 implementation("com.google.code.gson:gson:2.10.1")
                 // https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core-jvm
-                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
+//                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
+                // мокито
+//                implementation("org.mockito:mockito-core:5.3.1")
+                // junit 5
+//                implementation("org.junit.jupiter:junit-jupiter-engine:5.0.0")
+            }
+        }
+        val jvmTest by getting {
+            dependencies {
+                dependsOn(commonTest)
+//                implementation(project(":core"))
+//                implementation(kotlin("test-junit5"))
+                implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+
+//                implementation("org.spekframework.spek2:spek-dsl-jvm:$spek2Version")
+//                runtimeOnly("org.spekframework.spek2:spek-runtime-jvm:$spek2Version")
+//                runtimeOnly("org.spekframework.spek2:spek-runner-junit5:$spek2Version")
+
+
+                implementation("org.xmlunit:xmlunit-core:2.6.0")
+
+                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+                implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.21")
+                runtimeOnly("com.fasterxml.woodstox:woodstox-core:5.0.3")
+
 
             }
         }
-        val jvmTest by getting
     }
 }
+
+
 
 //tasks {
 //    // Use the native JUnit support of Gradle.

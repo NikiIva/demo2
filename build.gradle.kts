@@ -28,13 +28,7 @@ kotlin {
         withJava()
     }
     sourceSets {
-        val commonTest by getting {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(kotlin("test-annotations-common"))
-//                implementation("org.spekframework.spek2:spek-dsl-common:$spek2Version")
-            }
-        }
+
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
@@ -61,21 +55,22 @@ kotlin {
         }
         val jvmTest by getting {
             dependencies {
-                dependsOn(commonTest)
+                implementation(kotlin("test"))
+                implementation(kotlin("test-annotations-common"))
 //                implementation(project(":core"))
 //                implementation(kotlin("test-junit5"))
-                implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
+//                implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
 
 //                implementation("org.spekframework.spek2:spek-dsl-jvm:$spek2Version")
 //                runtimeOnly("org.spekframework.spek2:spek-runtime-jvm:$spek2Version")
 //                runtimeOnly("org.spekframework.spek2:spek-runner-junit5:$spek2Version")
 
 
-                implementation("org.xmlunit:xmlunit-core:2.6.0")
+//                implementation("org.xmlunit:xmlunit-core:2.6.0")
 
-                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
-                implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.21")
-                runtimeOnly("com.fasterxml.woodstox:woodstox-core:5.0.3")
+//                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
+//                implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.21")
+//                runtimeOnly("com.fasterxml.woodstox:woodstox-core:5.0.3")
 
 
             }

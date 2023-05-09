@@ -7,4 +7,9 @@ class zxc {
         println("qweasdzxc")
     }
 
+    @Test
+    fun zxc(){
+        print("123123123")
+    }
+
 }

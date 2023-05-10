@@ -45,6 +45,9 @@ kotlin {
 
                 // для работы с JSON
                 implementation("com.google.code.gson:gson:2.10.1")
+                // sqlite
+                implementation("org.xerial:sqlite-jdbc:3.41.2.1")
+
                 // https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core-jvm
 //                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
                 // мокито

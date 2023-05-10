@@ -4,14 +4,7 @@ import org.apache.http.client.methods.HttpGet
 import org.apache.http.impl.client.HttpClients
 import org.apache.http.util.EntityUtils
 
-object GetAramInfo {
-    //    https://pastebin.com/raw/Z6SWQNA9
-
-    @JvmStatic
-    fun main(args: Array<String>) {
-        println(getCloseableHttpResponse("https://pastebin.com/raw/Z6SWQNA9"))
-    }
-
+object ExternalRESTs {
     fun getCloseableHttpResponse(url: String?): String? {
         HttpClients.createDefault().use { httpClient ->
             val request = HttpGet(url)

@@ -3,37 +3,20 @@ package pastebin
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import ddragon.*
-import org.apache.http.client.methods.HttpGet
-import org.apache.http.impl.client.HttpClients
-import org.apache.http.util.EntityUtils
 
 object GetAllChampionsService {
 
-    @JvmStatic
-    fun main(args: Array<String>) {
-        println(allChampions)
-    }
-
-    fun getClosableHttpResponse(url: String?): String? {
-        HttpClients.createDefault().use { httpClient ->
-            val request = HttpGet(url)
-            httpClient.execute(request).use { response ->
-                if (response.statusLine.statusCode != 200) {
-                    throw RuntimeException("Не удалось получить список чемпионов")
-                }
-                val entity = response.entity
-                if (entity != null) {
-                    return EntityUtils.toString(entity)
-                }
-            }
-        }
-        return null
+    fun getChampionById(id :String, champions : ArrayList<Champion>) : Champion{
+        return champions.stream()
+            .filter { it.key == id }
+            .findAny()
+            .orElseThrow { RuntimeException("Не удалось найти чемпиона с key = $id") }
     }
 
     val allChampions: AllChampions
         get() {
             val allChampionsStringData: String? =
-                getClosableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json") //todo 13.4.1 научиться менять
+                ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json") //todo 13.4.1 научиться менять
             val readValue = ObjectMapper().readValue(
                 allChampionsStringData,
                 JsonNode::class.java

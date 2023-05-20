@@ -2,12 +2,11 @@ import org.junit.Assert
 import org.junit.Test
 
 class ClientRESTsTest {
-    val clientRESTs = ClientRESTs()
+    val clientRESTs = ClientRESTs.data
 
     @Test
     fun qwe(){
-        Assert.assertEquals("zxc", "zxc")
-        println("xzc")
+        println(clientRESTs)
     }
 
 

@@ -6,7 +6,7 @@ import pastebin.GetAllChampionsService
 object Example {
     @JvmStatic
     fun main(args: Array<String>) {
-        val session = ClientRESTs.mockSession()   //.getSession()
+        val session = ClientRESTs.getSession()
         print(session)
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)

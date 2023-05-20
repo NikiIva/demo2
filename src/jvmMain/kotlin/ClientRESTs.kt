@@ -8,7 +8,7 @@ import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
 
 object ClientRESTs {
-    private val data = GetAuthData.data
+    val data = GetAuthData.data
 
 
     fun getSummonerInfoById(id:String) : String{

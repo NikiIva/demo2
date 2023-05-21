@@ -5,7 +5,7 @@ import pastebin.GetAllChampionsService
 object Start {
     @JvmStatic
     fun main(args: Array<String>) {
-        val session = ClientRESTs.mockSession()//ClientRESTs.getSession()
+        val session = ClientRESTs.mockSession()//
         print(session)
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
@@ -38,9 +38,7 @@ object Start {
     }
 
 
-    fun run(): ArrayList<UIRow> {
-        var session = ClientRESTs.mockSession()//ClientRESTs.getSession()
-        print(session)
+    fun run(session : String): ArrayList<UIRow> {
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
         val benchChampionIds = SessionUtils.getBenchChampionIds(jsonNode)

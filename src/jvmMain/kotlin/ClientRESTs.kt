@@ -325,4 +325,269 @@ object ClientRESTs {
                 "  ]\n" +
                 "}\n"
     }
+
+    fun mockSession1() :String {
+        return "{\n" +
+                "  \"actions\": [],\n" +
+                "  \"allowBattleBoost\": true,\n" +
+                "  \"allowDuplicatePicks\": false,\n" +
+                "  \"allowLockedEvents\": false,\n" +
+                "  \"allowRerolling\": true,\n" +
+                "  \"allowSkinSelection\": true,\n" +
+                "  \"bans\": {\n" +
+                "    \"myTeamBans\": [],\n" +
+                "    \"numBans\": 0,\n" +
+                "    \"theirTeamBans\": []\n" +
+                "  },\n" +
+                "  \"benchChampions\": [\n" +
+                "    {\n" +
+                "      \"championId\": 201,\n" +
+                "      \"isPriority\": false\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"championId\": 518,\n" +
+                "      \"isPriority\": false\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"championId\": 102,\n" +
+                "      \"isPriority\": false\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"championId\": 427,\n" +
+                "      \"isPriority\": false\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"benchEnabled\": true,\n" +
+                "  \"boostableSkinCount\": 1,\n" +
+                "  \"chatDetails\": {\n" +
+                "    \"mucJwtDto\": {\n" +
+                "      \"channelClaim\": \"\",\n" +
+                "      \"domain\": \"\",\n" +
+                "      \"jwt\": \"\",\n" +
+                "      \"targetRegion\": \"\"\n" +
+                "    },\n" +
+                "    \"multiUserChatId\": \"fb1bb30a-4098-4c70-90db-ce03f8ec2ed6\",\n" +
+                "    \"multiUserChatPassword\": \"\"\n" +
+                "  },\n" +
+                "  \"counter\": 14,\n" +
+                "  \"entitledFeatureState\": {\n" +
+                "    \"additionalRerolls\": 0,\n" +
+                "    \"unlockedSkinIds\": []\n" +
+                "  },\n" +
+                "  \"gameId\": 440956198,\n" +
+                "  \"hasSimultaneousBans\": true,\n" +
+                "  \"hasSimultaneousPicks\": true,\n" +
+                "  \"isCustomGame\": false,\n" +
+                "  \"isSpectating\": false,\n" +
+                "  \"localPlayerCellId\": 0,\n" +
+                "  \"lockedEventIndex\": -1,\n" +
+                "  \"myTeam\": [\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 0,\n" +
+                "      \"championId\": 99,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"NONE\",\n" +
+                "      \"nameVisibilityType\": \"VISIBLE\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"d9f2d463-a9e6-5044-b3fe-beb59bbc5d7a\",\n" +
+                "      \"selectedSkinId\": 99042,\n" +
+                "      \"spell1Id\": 32,\n" +
+                "      \"spell2Id\": 4,\n" +
+                "      \"summonerId\": 318091,\n" +
+                "      \"team\": 1,\n" +
+                "      \"wardSkinId\": 1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 1,\n" +
+                "      \"championId\": 15,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"NONE\",\n" +
+                "      \"nameVisibilityType\": \"VISIBLE\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"435edd61-f464-5bfe-9319-871974649cca\",\n" +
+                "      \"selectedSkinId\": 15008,\n" +
+                "      \"spell1Id\": 7,\n" +
+                "      \"spell2Id\": 4,\n" +
+                "      \"summonerId\": 4051076,\n" +
+                "      \"team\": 1,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 2,\n" +
+                "      \"championId\": 267,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"NONE\",\n" +
+                "      \"nameVisibilityType\": \"VISIBLE\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"0cfd8337-6e8d-5066-948d-dbff7deabc92\",\n" +
+                "      \"selectedSkinId\": 267000,\n" +
+                "      \"spell1Id\": 4,\n" +
+                "      \"spell2Id\": 32,\n" +
+                "      \"summonerId\": 23973621,\n" +
+                "      \"team\": 1,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 3,\n" +
+                "      \"championId\": 69,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"NONE\",\n" +
+                "      \"nameVisibilityType\": \"VISIBLE\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"077e3d86-aa8b-57fd-9d5f-0cdc69d118ae\",\n" +
+                "      \"selectedSkinId\": 69014,\n" +
+                "      \"spell1Id\": 32,\n" +
+                "      \"spell2Id\": 4,\n" +
+                "      \"summonerId\": 69669,\n" +
+                "      \"team\": 1,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 4,\n" +
+                "      \"championId\": 7,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"NONE\",\n" +
+                "      \"nameVisibilityType\": \"VISIBLE\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"6422a073-1455-5ab5-86d9-8780b98367ae\",\n" +
+                "      \"selectedSkinId\": 7020,\n" +
+                "      \"spell1Id\": 4,\n" +
+                "      \"spell2Id\": 6,\n" +
+                "      \"summonerId\": 4352600,\n" +
+                "      \"team\": 1,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"pickOrderSwaps\": [],\n" +
+                "  \"recoveryCounter\": 0,\n" +
+                "  \"rerollsRemaining\": 1,\n" +
+                "  \"skipChampionSelect\": false,\n" +
+                "  \"theirTeam\": [\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 5,\n" +
+                "      \"championId\": 0,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"\",\n" +
+                "      \"nameVisibilityType\": \"HIDDEN\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"\",\n" +
+                "      \"selectedSkinId\": 0,\n" +
+                "      \"spell1Id\": 0,\n" +
+                "      \"spell2Id\": 0,\n" +
+                "      \"summonerId\": 0,\n" +
+                "      \"team\": 2,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 6,\n" +
+                "      \"championId\": 0,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"\",\n" +
+                "      \"nameVisibilityType\": \"HIDDEN\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"\",\n" +
+                "      \"selectedSkinId\": 0,\n" +
+                "      \"spell1Id\": 0,\n" +
+                "      \"spell2Id\": 0,\n" +
+                "      \"summonerId\": 0,\n" +
+                "      \"team\": 2,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 7,\n" +
+                "      \"championId\": 0,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"\",\n" +
+                "      \"nameVisibilityType\": \"HIDDEN\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"\",\n" +
+                "      \"selectedSkinId\": 0,\n" +
+                "      \"spell1Id\": 0,\n" +
+                "      \"spell2Id\": 0,\n" +
+                "      \"summonerId\": 0,\n" +
+                "      \"team\": 2,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 8,\n" +
+                "      \"championId\": 0,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"\",\n" +
+                "      \"nameVisibilityType\": \"HIDDEN\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"\",\n" +
+                "      \"selectedSkinId\": 0,\n" +
+                "      \"spell1Id\": 0,\n" +
+                "      \"spell2Id\": 0,\n" +
+                "      \"summonerId\": 0,\n" +
+                "      \"team\": 2,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"assignedPosition\": \"\",\n" +
+                "      \"cellId\": 9,\n" +
+                "      \"championId\": 0,\n" +
+                "      \"championPickIntent\": 0,\n" +
+                "      \"entitledFeatureType\": \"\",\n" +
+                "      \"nameVisibilityType\": \"HIDDEN\",\n" +
+                "      \"obfuscatedPuuid\": \"\",\n" +
+                "      \"obfuscatedSummonerId\": 0,\n" +
+                "      \"puuid\": \"\",\n" +
+                "      \"selectedSkinId\": 0,\n" +
+                "      \"spell1Id\": 0,\n" +
+                "      \"spell2Id\": 0,\n" +
+                "      \"summonerId\": 0,\n" +
+                "      \"team\": 2,\n" +
+                "      \"wardSkinId\": -1\n" +
+                "    }\n" +
+                "  ],\n" +
+                "  \"timer\": {\n" +
+                "    \"adjustedTimeLeftInPhase\": 48043,\n" +
+                "    \"internalNowInEpochMs\": 1683477324991,\n" +
+                "    \"isInfinite\": false,\n" +
+                "    \"phase\": \"FINALIZATION\",\n" +
+                "    \"totalTimeInPhase\": 70000\n" +
+                "  },\n" +
+                "  \"trades\": [\n" +
+                "    {\n" +
+                "      \"cellId\": 2,\n" +
+                "      \"id\": 96,\n" +
+                "      \"state\": \"AVAILABLE\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"cellId\": 3,\n" +
+                "      \"id\": 33,\n" +
+                "      \"state\": \"AVAILABLE\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"cellId\": 4,\n" +
+                "      \"id\": 73,\n" +
+                "      \"state\": \"AVAILABLE\"\n" +
+                "    },\n" +
+                "    {\n" +
+                "      \"cellId\": 1,\n" +
+                "      \"id\": 85,\n" +
+                "      \"state\": \"AVAILABLE\"\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}"
+    }
 }

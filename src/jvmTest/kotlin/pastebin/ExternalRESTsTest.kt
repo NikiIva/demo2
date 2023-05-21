@@ -7,7 +7,7 @@ class ExternalRESTsTest {
 
     @Test
     fun  qwe(){
-        print(ExternalRESTs.getCloseableHttpResponse("https://pastebin.com/raw/Z6SWQNA9").toString())
+        print(ExternalRESTs.getCloseableHttpResponse("https://ddragon.leagueoflegends.com/cdn/13.4.1/img/champion/Kindred.png").toString())
     }
 
     @Test

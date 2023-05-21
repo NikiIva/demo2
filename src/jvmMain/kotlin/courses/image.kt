@@ -6,29 +6,66 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.produceState
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.loadImageBitmap
 import androidx.compose.ui.res.loadSvgPainter
 import androidx.compose.ui.res.loadXmlImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.singleWindowApplication
+import com.caverock.androidsvg.SVGParseException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.xml.sax.InputSource
-import java.io.File
-import java.io.IOException
+import java.io.*
+import java.net.MalformedURLException
 import java.net.URL
+import javax.imageio.ImageIO
+
+
+@Throws(IOException::class)
+fun givenUsingPlainJava_whenConvertingFileToInputStream_thenCorrect() {
+    val initialFile = File("src/main/resources/sample.txt")
+    val targetStream: InputStream = FileInputStream(initialFile)
+}
+
+fun imageByter(): ByteArray? {
+    return try {
+        val url = URL("https://ddragon.leagueoflegends.com/cdn/13.4.1/img/champion/Kindred.png")
+        val inStream = url.content as InputStream
+        val buffer = ByteArray(8192)
+        var bytesRead: Int
+        val output = ByteArrayOutputStream()
+        while (inStream.read(buffer).also { bytesRead = it } != -1) {
+            output.write(buffer, 0, bytesRead)
+        }
+        output.toByteArray()
+    } catch (e: MalformedURLException) {
+        e.printStackTrace()
+        null
+    } catch (e: IOException) {
+        e.printStackTrace()
+        null
+    }
+}
+
+@Throws(SVGParseException::class)
+fun getFromInputStream(inp: InputStream?) {
+    val read = ImageIO.read(inp)
+    ImageIO.write(read, "jpg", File("outputImage.jpg") );
+}
 
 fun main() = singleWindowApplication {
+//    val url = URL("https://ddragon.leagueoflegends.com/cdn/13.4.1/img/champion/Kindred.png")
+//    val inStream = url.content as InputStream
+//    getFromInputStream(inStream)
+
     val density = LocalDensity.current
     Column {
 //        AsyncImage(
@@ -82,6 +119,7 @@ fun <T> AsyncImage(
             contentScale = contentScale,
             modifier = modifier
         )
+        Image(painter = painterResource("drawable/qwe.jpg"), contentDescription = "")
     }
 }
 

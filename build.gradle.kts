@@ -48,6 +48,19 @@ kotlin {
                 // sqlite
                 implementation("org.xerial:sqlite-jdbc:3.41.2.1")
 
+                implementation("io.coil-kt:coil-compose:2.0.0-rc01")
+
+                // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
+                implementation("com.github.bumptech.glide:glide:4.15.1")
+
+                // https://mvnrepository.com/artifact/com.caverock/androidsvg
+                implementation("com.caverock:androidsvg:1.4")
+                // https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-transcoder
+                implementation("org.apache.xmlgraphics:batik-transcoder:1.16")
+
+
+
+
                 // https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core-jvm
 //                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
                 // мокито

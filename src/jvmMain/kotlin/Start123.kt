@@ -1,3 +1,4 @@
+import cache.Cache
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import pastebin.GetAllChampionsService
@@ -15,7 +16,7 @@ object Start {
             jsonNode = mapper.readTree(ClientRESTs.getSummonerInfoById(ally.summonerId))
             ally.summonerName = jsonNode.get("displayName").textValue()
         }
-        val champions = GetAllChampionsService.allChampions.champions
+        val champions = Cache.getAllChampions()?.champions
 
         val uiRow = ArrayList<UIRow>()
         for (ally in allies) {
@@ -47,7 +48,7 @@ object Start {
             jsonNode = mapper.readTree(ClientRESTs.getSummonerInfoById(ally.summonerId))
             ally.summonerName = jsonNode.get("displayName").textValue()
         }
-        val champions = GetAllChampionsService.allChampions.champions
+        val champions = Cache.getAllChampions()?.champions
 
         val uiRow = ArrayList<UIRow>()
         for (ally in allies) {

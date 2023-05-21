@@ -6,7 +6,10 @@ import ddragon.*
 
 object GetAllChampionsService {
 
-    fun getChampionById(id :String?, champions : ArrayList<Champion>) : Champion{
+    fun getChampionById(id :String?, champions : ArrayList<Champion>?) : Champion{
+        if (champions == null) {
+            throw RuntimeException("champions = null")
+        }
         return champions.stream()
             .filter { it.key == id }
             .findAny()

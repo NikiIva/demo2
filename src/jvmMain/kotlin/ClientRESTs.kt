@@ -11,7 +11,7 @@ object ClientRESTs {
     val data = GetAuthData.data
 
 
-    fun getSummonerInfoById(id:String) : String{
+    fun getSummonerInfoById(id:String?) : String{
         return getData("lol-summoner/v1/summoners/$id", data["port"], data["token"])
     }
 

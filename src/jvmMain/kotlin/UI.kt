@@ -6,9 +6,9 @@ data class UIRow (
 )
 
 data class SummonerInfo(
-    val summonerId : String,
-    var championId :String,
-    var cellId : String
+    val summonerId : String?,
+    var championId :String?,
+    var cellId : String?
 ) {
     var summonerName : String = ""
     override fun toString(): String {

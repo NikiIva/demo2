@@ -6,7 +6,7 @@ import ddragon.*
 
 object GetAllChampionsService {
 
-    fun getChampionById(id :String, champions : ArrayList<Champion>) : Champion{
+    fun getChampionById(id :String?, champions : ArrayList<Champion>) : Champion{
         return champions.stream()
             .filter { it.key == id }
             .findAny()
@@ -17,7 +17,7 @@ object GetAllChampionsService {
         get() {
             val allChampionsStringData: String? =
                 ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json") //todo 13.4.1 научиться менять
-            val readValue = ObjectMapper().readValue(
+            var readValue = ObjectMapper().readValue(
                 allChampionsStringData,
                 JsonNode::class.java
             )
@@ -25,6 +25,16 @@ object GetAllChampionsService {
             for (jsonNode in readValue["data"]) {
                 champions.add(getChampion(jsonNode))
             }
+            val allChampionsBalanceData: String? =
+                ExternalRESTs.getCloseableHttpResponse("https://pastebin.com/raw/Z6SWQNA9")
+            val pastebin = ObjectMapper().readValue(
+                allChampionsBalanceData,
+                JsonNode::class.java
+            )
+            for (champion in champions){
+                champion.balance = getBalance(pastebin, champion.name)
+            }
+
             return AllChampions(
                 readValue["type"].textValue(),
                 readValue["format"].textValue(),
@@ -32,6 +42,34 @@ object GetAllChampionsService {
                 champions
             )
         }
+
+    private fun getBalance(nodes: JsonNode?, championName: String?) : Balance{
+        if (nodes != null) {
+            for (node in nodes){
+                if (championName == node["championNameType"].textValue()){
+                    val damageDealt = if ( node["damageDealtType"]?.doubleValue() == null) "" else node["damageDealtType"]?.doubleValue().toString()
+                    val damageReceivedType = if ( node["damageReceivedType"]?.doubleValue() == null) "" else node["damageReceivedType"]?.doubleValue().toString()
+                    val abilityHasteType = if ( node["abilityHasteType"]?.doubleValue() == null) "" else node["abilityHasteType"]?.doubleValue().toString()
+                    val attackSpeedType = if ( node["attackSpeedType"]?.doubleValue() == null) "" else node["attackSpeedType"]?.doubleValue().toString()
+                    val sheldType = if ( node["sheldType"]?.doubleValue() == null) "" else node["sheldType"]?.doubleValue().toString()
+                    val healType = if ( node["healType"]?.doubleValue() == null) "" else node["healType"]?.doubleValue().toString()
+                    val tenacityType = if ( node["tenacityType"]?.doubleValue() == null) "" else node["tenacityType"]?.doubleValue().toString()
+                    val energyType = if ( node["energyType"]?.doubleValue() == null) "" else node["energyType"]?.doubleValue().toString()
+                    return Balance(
+                        damageDealt,
+                        damageReceivedType,
+                        abilityHasteType,
+                        attackSpeedType,
+                        sheldType,
+                        healType,
+                        tenacityType,
+                        energyType
+                    )
+                }
+            }
+        }
+        throw RuntimeException(championName)
+    }
 
     private fun getChampion(jsonNode: JsonNode): Champion {
         return Champion(
@@ -45,7 +83,8 @@ object GetAllChampionsService {
             getImage(jsonNode["image"]),
             getStrings(jsonNode["tags"]),
             jsonNode["partype"].textValue(),
-            getStats(jsonNode["stats"])
+            getStats(jsonNode["stats"]),
+            null
         )
     }
 

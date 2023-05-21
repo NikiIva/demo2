@@ -1,5 +1,7 @@
 package ddragon
 
+import pastebin.Balance
+
 data class AllChampions(
     var type: String?,
     var format: String?,
@@ -18,7 +20,8 @@ data class Champion(
     var image: ChampionImage?,
     var tags: List<String>?,
     var partype: String?,
-    var stats: ChampionStats?
+    var stats: ChampionStats?,
+    var balance: Balance?
 )
 
 data class ChampionInfo(

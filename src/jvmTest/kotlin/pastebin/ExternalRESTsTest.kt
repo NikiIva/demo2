@@ -7,7 +7,7 @@ class ExternalRESTsTest {
 
     @Test
     fun  qwe(){
-
+        print(ExternalRESTs.getCloseableHttpResponse("https://pastebin.com/raw/Z6SWQNA9").toString())
     }
 
     @Test

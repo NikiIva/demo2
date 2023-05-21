@@ -23,7 +23,6 @@ import kotlinx.coroutines.delay
 @Preview
 fun App() {
     MaterialTheme {
-//        CircleItem()
         makeRow()
     }
 }
@@ -76,6 +75,25 @@ private fun makeRow() {
             uiRows.value[13].championInfo?.name ?: "",
             uiRows.value[14].championInfo?.name ?: "",
             uiRows.value[15].championInfo?.name ?: ""
+        )
+    }
+    val ddragonChampionInfoName = remember {
+        mutableListOf(
+            uiRows.value[0].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[1].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[2].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[3].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[4].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[5].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[6].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[7].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[8].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[9].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[10].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[11].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[12].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[13].championInfo?.balance?.ddragonChampionName ?: "",
+            uiRows.value[14].championInfo?.balance?.ddragonChampionName ?: ""
         )
     }
     val damageDealt = remember {
@@ -371,7 +389,11 @@ private fun makeRow() {
                     ) {
                         Text(text = championInfoName[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
-                    Image(painter = painterResource("drawable/Kindred.jpg"), contentDescription = "")
+                    var ddragonName = ddragonChampionInfoName[i]
+                    if (ddragonName == ""){
+                        ddragonName = "0.0"
+                    }
+                    Image(painter = painterResource("drawable/${ddragonName}.jpg"), contentDescription = "")
                     Box(
                         modifier = customModifier()
                             .background(color = getColor(damageDealt[i], true, 1.0)),
@@ -471,8 +493,8 @@ private fun makeRow() {
                         healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
                         tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
                         energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
+                        ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
                     }
-
                 }
             }
         }

@@ -58,7 +58,8 @@ object GetAllChampionsService {
                     val healType = if ( node["healType"]?.doubleValue() == null) "" else node["healType"]?.doubleValue().toString()
                     val tenacityType = if ( node["tenacityType"]?.doubleValue() == null) "" else node["tenacityType"]?.doubleValue().toString()
                     val energyType = if ( node["energyType"]?.doubleValue() == null) "" else node["energyType"]?.doubleValue().toString()
-                    val ddragonChampionName = if ( node["ddragonChampionName"]?.doubleValue() == null) "" else node["ddragonChampionName"]?.doubleValue().toString()
+                    val ddragonChampionName = if ( node["ddragonChampionName"]?.textValue() == null) "" else node["ddragonChampionName"]?.textValue().toString()
+                    ExternalRESTs.savePng("$ddragonChampionName")
                     return Balance(
                         damageDealt,
                         damageReceivedType,
@@ -68,6 +69,7 @@ object GetAllChampionsService {
                         healType,
                         tenacityType,
                         energyType,
+//                        null
                         ddragonChampionName
                     )
                 }

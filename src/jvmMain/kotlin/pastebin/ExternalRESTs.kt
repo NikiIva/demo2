@@ -39,7 +39,7 @@ object ExternalRESTs {
                 }
                 val inputStream : InputStream = response.entity.content
                 val read = ImageIO.read(inputStream)
-                ImageIO.write(read, "jpg", File("src/jvmMain/resources/drawable/$ddragonChampionName.jpg") );
+                ImageIO.write(read, "jpg", File("src/jvmMain/resources/drawable/$ddragonChampionName.jpg"))
             }
         }
     }

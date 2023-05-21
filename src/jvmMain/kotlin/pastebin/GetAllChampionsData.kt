@@ -54,10 +54,11 @@ object GetAllChampionsService {
                     val damageReceivedType = if ( node["damageReceivedType"]?.doubleValue() == null) "" else node["damageReceivedType"]?.doubleValue().toString()
                     val abilityHasteType = if ( node["abilityHasteType"]?.doubleValue() == null) "" else node["abilityHasteType"]?.doubleValue().toString()
                     val attackSpeedType = if ( node["attackSpeedType"]?.doubleValue() == null) "" else node["attackSpeedType"]?.doubleValue().toString()
-                    val sheldType = if ( node["sheldType"]?.doubleValue() == null) "" else node["sheldType"]?.doubleValue().toString()
+                    val sheldType = if ( node["shieldType"]?.doubleValue() == null) "" else node["sheldType"]?.doubleValue().toString()
                     val healType = if ( node["healType"]?.doubleValue() == null) "" else node["healType"]?.doubleValue().toString()
                     val tenacityType = if ( node["tenacityType"]?.doubleValue() == null) "" else node["tenacityType"]?.doubleValue().toString()
                     val energyType = if ( node["energyType"]?.doubleValue() == null) "" else node["energyType"]?.doubleValue().toString()
+                    val ddragonChampionName = if ( node["ddragonChampionName"]?.doubleValue() == null) "" else node["ddragonChampionName"]?.doubleValue().toString()
                     return Balance(
                         damageDealt,
                         damageReceivedType,
@@ -66,12 +67,14 @@ object GetAllChampionsService {
                         sheldType,
                         healType,
                         tenacityType,
-                        energyType
+                        energyType,
+                        ddragonChampionName
                     )
                 }
+
             }
         }
-        throw RuntimeException(championName)
+        throw RuntimeException("Не удалось получить баланс арама для $championName")
     }
 
     private fun getChampion(jsonNode: JsonNode): Champion {

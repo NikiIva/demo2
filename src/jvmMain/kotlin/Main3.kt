@@ -371,7 +371,7 @@ private fun makeRow() {
                     ) {
                         Text(text = championInfoName[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
-//                    Image(painter = painterResource("drawable/qwe.jpg"), contentDescription = "")
+                    Image(painter = painterResource("drawable/Kindred.jpg"), contentDescription = "")
                     Box(
                         modifier = customModifier()
                             .background(color = getColor(damageDealt[i], true, 1.0)),

@@ -8,5 +8,6 @@ data class Balance (
     var sheild : String?,
     var healing : String?,
     var tenacity: String?,
-    var energy : String?
+    var energy : String?,
+    var ddragonChampionName : String?
 )

@@ -69,7 +69,6 @@ object GetAllChampionsService {
                         healType,
                         tenacityType,
                         energyType,
-//                        null
                         ddragonChampionName
                     )
                 }

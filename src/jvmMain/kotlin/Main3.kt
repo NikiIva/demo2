@@ -2,6 +2,7 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -10,7 +11,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
@@ -30,7 +33,9 @@ fun App() {
 @Composable
 private fun makeRow() {
     val session = remember {
-        mutableStateOf(ClientRESTs.mockSession())
+        mutableStateOf(
+            ClientRESTs.mockSession()
+        )
     }
 
     var uiRows = remember {
@@ -253,7 +258,7 @@ private fun makeRow() {
         mutableStateOf(Color.Gray)
     }
 
-    fun customModifier() : Modifier{
+    fun customModifier(): Modifier {
         return Modifier
             .padding(3.dp)
             .width(100.dp)
@@ -262,29 +267,19 @@ private fun makeRow() {
 
     MaterialTheme {
         Column(
-
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row()
             {
                 Box(
                     modifier = Modifier
                         .padding(3.dp)
-                        .width(150.dp)
+                        .width(136.dp)
                         .height(30.dp)
                         .background(color = color.value),
                     contentAlignment = Alignment.Center
                 ) {
                     Text(text = "summoner name", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "champion", style = TextStyle(color = Color.White, fontSize = 14.sp))
                 }
                 Box(
                     modifier = Modifier
@@ -369,31 +364,33 @@ private fun makeRow() {
             }
             for (i in 0..14) {
                 Row() {
-                    Box(
+                    Row(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(150.dp)
-                            .height(30.dp)
-                            .background(color = color.value),
-                        contentAlignment = Alignment.Center
+                            .background(color = Color.Green),
                     ) {
                         Text(
+                            modifier = Modifier
+                                .width(100.dp)
+                                .height(30.dp),
                             text = summonerName[i],
                             style = TextStyle(color = Color.White, fontSize = 20.sp)
                         )
+                        var ddragonName = ddragonChampionInfoName[i]
+                        if (ddragonName == "") {
+                            ddragonName = "0.0"
+                        }
+
+                        Image(
+                            painter = painterResource("drawable/${ddragonName}.jpg"),
+                            contentDescription = "image",
+                            contentScale = ContentScale.Crop,
+                            modifier = Modifier
+                                .size(35.dp)
+                                .clip(CircleShape),
+                        )
+
                     }
-                    Box(
-                        modifier = customModifier()
-                            .background(color = color.value),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = championInfoName[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
-                    }
-                    var ddragonName = ddragonChampionInfoName[i]
-                    if (ddragonName == ""){
-                        ddragonName = "0.0"
-                    }
-                    Image(painter = painterResource("drawable/${ddragonName}.jpg"), contentDescription = "")
                     Box(
                         modifier = customModifier()
                             .background(color = getColor(damageDealt[i], true, 1.0)),
@@ -477,25 +474,25 @@ private fun makeRow() {
         }
         LaunchedEffect(Unit) {
             while (true) {
-                delay(5_000)
+                delay(500_000)
                 val newSession = ClientRESTs.mockSession1()
-                if (newSession != session.value) {
-                    session.value = newSession
-                    uiRows = mutableStateOf(Start.run(session.value))
-                    for ( i in 0..14) {
-                        summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
-                        championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
-                        damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
-                        damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
-                        abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
-                        attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
-                        shield[i] = uiRows.value[i].championInfo?.balance?.sheild ?: ""
-                        healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
-                        tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
-                        energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
-                        ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
-                    }
+
+                session.value = newSession
+                uiRows = mutableStateOf(Start.run(session.value))
+                for (i in 0..14) {
+                    summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
+                    championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
+                    damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
+                    damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
+                    abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
+                    attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
+                    shield[i] = uiRows.value[i].championInfo?.balance?.sheild ?: ""
+                    healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
+                    tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
+                    energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
+                    ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
                 }
+
             }
         }
     }

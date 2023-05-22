@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.http.HttpEntity
 import org.apache.http.auth.AuthScope
 import org.apache.http.auth.UsernamePasswordCredentials
@@ -16,7 +18,15 @@ object ClientRESTs {
     }
 
     fun getSession():String {
-        return getData("lol-champ-select/v1/session", data["port"], data["token"])
+        var session = getData("lol-champ-select/v1/session", data["port"], data["token"])
+        val mapper = ObjectMapper()
+        var jsonNode: JsonNode = mapper.readTree(session)
+        while (jsonNode["httpStatus"]!=null && jsonNode["httpStatus"].asText() == "404"){
+            Thread.sleep(10_000)
+            session = getData("lol-champ-select/v1/session", data["port"], data["token"])
+            jsonNode= mapper.readTree(session)
+        }
+        return session
     }
 
     fun getData(url: String, port: String?, password: String?) : String{

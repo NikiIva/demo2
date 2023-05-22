@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил поле ddragon для баланса">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Удалось получить динамические картинки">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kindred.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/resources/drawable/0.0.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +53,8 @@
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -106,6 +107,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jvmMain/kotlin" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/courses" />
     </key>
@@ -116,52 +118,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.Main3Kt">
-    <configuration name="ImageKtTest.asd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanJvmTest" />
-            <option value=":jvmTest" />
-            <option value="--tests &quot;courses.ImageKtTest.asd&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="ImageKtTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanJvmTest" />
-            <option value=":jvmTest" />
-            <option value="--tests &quot;courses.ImageKtTest.qwe&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ImageKtTest.tryCache" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -199,13 +155,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main4Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main4Kt" />
+      <module name="demo2.jvmMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Start" />
+      <module name="demo2.jvmMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Main3Kt" />
+        <item itemvalue="Kotlin.Main4Kt" />
+        <item itemvalue="Kotlin.Start" />
         <item itemvalue="Kotlin.ImageKt" />
         <item itemvalue="Gradle.ImageKtTest.tryCache" />
-        <item itemvalue="Gradle.ImageKtTest.qwe" />
-        <item itemvalue="Gradle.ImageKtTest.asd" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +307,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684687548029</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Удалось получить динамические картинки">
+      <created>1684688816805</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684688816805</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Удалось получить динамические картинки">
+      <created>1684688821253</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684688821253</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -377,7 +361,8 @@
     <MESSAGE value="11 - добавил кеширование" />
     <MESSAGE value="Научился сохранять png и загружать из файла ресурсов" />
     <MESSAGE value="Добавил поле ddragon для баланса" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил поле ddragon для баланса" />
+    <MESSAGE value="Удалось получить динамические картинки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Удалось получить динамические картинки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -389,13 +374,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt</url>
-          <line>78</line>
+          <line>77</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt</url>
-          <line>62</line>
-          <option name="timeStamp" value="5" />
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
+          <line>9</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

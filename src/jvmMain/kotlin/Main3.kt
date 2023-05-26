@@ -1,6 +1,7 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
@@ -34,6 +35,7 @@ fun App() {
 private fun makeRow() {
     val session = remember {
         mutableStateOf(
+//            ClientRESTs.getSession()
             ClientRESTs.mockSession()
         )
     }
@@ -80,6 +82,26 @@ private fun makeRow() {
             uiRows.value[13].championInfo?.name ?: "",
             uiRows.value[14].championInfo?.name ?: "",
             uiRows.value[15].championInfo?.name ?: ""
+        )
+    }
+    val championInfoKey = remember {
+        mutableListOf(
+            uiRows.value[0].championInfo?.key ?: "",
+            uiRows.value[1].championInfo?.key ?: "",
+            uiRows.value[2].championInfo?.key ?: "",
+            uiRows.value[3].championInfo?.key ?: "",
+            uiRows.value[4].championInfo?.key ?: "",
+            uiRows.value[5].championInfo?.key ?: "",
+            uiRows.value[6].championInfo?.key ?: "",
+            uiRows.value[7].championInfo?.key ?: "",
+            uiRows.value[8].championInfo?.key ?: "",
+            uiRows.value[9].championInfo?.key ?: "",
+            uiRows.value[10].championInfo?.key ?: "",
+            uiRows.value[11].championInfo?.key ?: "",
+            uiRows.value[12].championInfo?.key ?: "",
+            uiRows.value[13].championInfo?.key ?: "",
+            uiRows.value[14].championInfo?.key ?: "",
+            uiRows.value[15].championInfo?.key ?: ""
         )
     }
     val ddragonChampionInfoName = remember {
@@ -284,11 +306,20 @@ private fun makeRow() {
                 Box(
                     modifier = Modifier
                         .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
+                        .width(35.dp)
+                        .height(35.dp)
                         .background(color = color.value),
                     contentAlignment = Alignment.Center
                 ) {
+                    Image(
+                        painter = painterResource("icons/dd.png"),
+                        contentDescription = "image",
+                        contentScale = ContentScale.Crop,
+                        modifier = Modifier.clickable{
+                            //showSnackbar()
+                        },
+                        alignment = Alignment.Center
+                    )
                     Text(text = "damage dealt", style = TextStyle(color = Color.White, fontSize = 14.sp))
                 }
                 Box(
@@ -364,34 +395,7 @@ private fun makeRow() {
             }
             for (i in 0..14) {
                 Row() {
-//                    Row(
-//                        modifier = Modifier
-//                            .padding(3.dp)
-//                            .background(color = Color.Green),
-//                    ) {
-//                        Text(
-//                            modifier = Modifier
-//                                .width(100.dp)
-//                                .height(30.dp),
-//                            text = summonerName[i],
-//                            style = TextStyle(color = Color.White, fontSize = 20.sp)
-//                        )
-//                        var ddragonName = ddragonChampionInfoName[i]
-//                        if (ddragonName == "") {
-//                            ddragonName = "0.0"
-//                        }
-//
-//                        Image(
-//                            painter = painterResource("drawable/${ddragonName}.jpg"),
-//                            contentDescription = "image",
-//                            contentScale = ContentScale.Crop,
-//                            modifier = Modifier
-//                                .size(35.dp)
-//                                .clip(CircleShape),
-//                        )
-//
-//                    }
-                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i])
+                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i], championInfoKey[i])
                     Box(
                         modifier = customModifier()
                             .background(color = getColor(damageDealt[i], true, 1.0)),
@@ -475,7 +479,7 @@ private fun makeRow() {
         }
         LaunchedEffect(Unit) {
             while (true) {
-                delay(500_000)
+                delay(5_000)
                 val newSession = ClientRESTs.mockSession1()
 
                 session.value = newSession
@@ -483,6 +487,7 @@ private fun makeRow() {
                 for (i in 0..14) {
                     summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
                     championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
+                    championInfoKey[i] = uiRows.value[i].championInfo?.key ?: ""
                     damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
                     damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
                     abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""

@@ -33,13 +33,17 @@ object ClientRESTs {
         return session
     }
 
-    fun postData(url:String): String{
-        return post(url, data["port"], data["token"])
+    fun swapBench(key: String){
+        post("lol-champ-select/v1/session/bench/swap/$key", data["port"], data["token"])
+    }
+
+    fun postData(url:String) {
+        post(url, data["port"], data["token"])
     }
 
     //lol-champ-select/v1/session/trades/{id}
     //lol-champ-select/v1/session/bench/swap/{championId}
-    fun post(url:String, port:String?, password: String?):String {
+    fun post(url:String, port:String?, password: String?) {
         val request = HttpPost("https://127.0.0.1:$port/$url")
 
         val provider: CredentialsProvider = BasicCredentialsProvider()
@@ -56,7 +60,6 @@ object ClientRESTs {
                     println("Для запроса $url получили responseCode ${response.statusLine.statusCode}")
                 }
             }
-        throw RuntimeException("Не удалось получить данные для запроса $url")
     }
 
     fun getData(url: String, port: String?, password: String?) : String{

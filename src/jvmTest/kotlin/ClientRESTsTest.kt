@@ -9,5 +9,14 @@ class ClientRESTsTest {
         println(clientRESTs)
     }
 
+    @Test
+    fun testPost(){
+        val id : String = "36"
+        println(ClientRESTs.postData("lol-champ-select/v1/session/bench/swap/$id"))
+    }
 
+    @Test
+    fun asd(){
+        println(ClientRESTs.getCurrentChampion())
+    }
 }

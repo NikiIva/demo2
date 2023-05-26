@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Удалось получить динамические картинки">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил картинки на подгрузку">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +117,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.Main3Kt">
-    <configuration name="ImageKtTest.tryCache" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ClientRESTsTest.asd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -131,7 +130,7 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;courses.ImageKtTest.tryCache&quot;" />
+            <option value="--tests &quot;ClientRESTsTest.asd&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -141,12 +140,51 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="ImageKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="courses.ImageKt" />
-      <module name="demo2.jvmMain" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ClientRESTsTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;ClientRESTsTest.qwe&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ClientRESTsTest.testPost" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;ClientRESTsTest.testPost&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main3Kt" />
@@ -162,20 +200,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Start" />
-      <module name="demo2.jvmMain" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Main3Kt" />
         <item itemvalue="Kotlin.Main4Kt" />
-        <item itemvalue="Kotlin.Start" />
-        <item itemvalue="Kotlin.ImageKt" />
-        <item itemvalue="Gradle.ImageKtTest.tryCache" />
+        <item itemvalue="Gradle.ClientRESTsTest.testPost" />
+        <item itemvalue="Gradle.ClientRESTsTest.asd" />
+        <item itemvalue="Gradle.ClientRESTsTest.qwe" />
       </list>
     </recent_temporary>
   </component>
@@ -321,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684688821253</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Добавил картинки на подгрузку">
+      <created>1684777152541</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684777152541</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +400,8 @@
     <MESSAGE value="Научился сохранять png и загружать из файла ресурсов" />
     <MESSAGE value="Добавил поле ddragon для баланса" />
     <MESSAGE value="Удалось получить динамические картинки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалось получить динамические картинки" />
+    <MESSAGE value="Добавил картинки на подгрузку" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил картинки на подгрузку" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

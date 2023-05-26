@@ -5,6 +5,7 @@ import org.apache.http.auth.AuthScope
 import org.apache.http.auth.UsernamePasswordCredentials
 import org.apache.http.client.CredentialsProvider
 import org.apache.http.client.methods.HttpGet
+import org.apache.http.client.methods.HttpPost
 import org.apache.http.impl.client.BasicCredentialsProvider
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
@@ -12,6 +13,9 @@ import org.apache.http.util.EntityUtils
 object ClientRESTs {
     val data = GetAuthData.data
 
+    fun getCurrentChampion():String{
+        return getData("lol-champ-select/v1/grid-champions/53", data["port"], data["token"])
+    }
 
     fun getSummonerInfoById(id:String?) : String{
         return getData("lol-summoner/v1/summoners/$id", data["port"], data["token"])
@@ -27,6 +31,32 @@ object ClientRESTs {
             jsonNode= mapper.readTree(session)
         }
         return session
+    }
+
+    fun postData(url:String): String{
+        return post(url, data["port"], data["token"])
+    }
+
+    //lol-champ-select/v1/session/trades/{id}
+    //lol-champ-select/v1/session/bench/swap/{championId}
+    fun post(url:String, port:String?, password: String?):String {
+        val request = HttpPost("https://127.0.0.1:$port/$url")
+
+        val provider: CredentialsProvider = BasicCredentialsProvider()
+        provider.setCredentials(
+            AuthScope.ANY,
+            UsernamePasswordCredentials("riot", password)
+        )
+
+        HttpClientBuilder.create()
+            .setDefaultCredentialsProvider(provider)
+            .build().use { httpClient ->
+                httpClient.execute(request).use { response ->
+                    // 401 if wrong user/password
+                    println("Для запроса $url получили responseCode ${response.statusLine.statusCode}")
+                }
+            }
+        throw RuntimeException("Не удалось получить данные для запроса $url")
     }
 
     fun getData(url: String, port: String?, password: String?) : String{

@@ -274,7 +274,7 @@ private fun makeRow() {
                 Box(
                     modifier = Modifier
                         .padding(3.dp)
-                        .width(136.dp)
+                        .width(139.dp)
                         .height(30.dp)
                         .background(color = color.value),
                     contentAlignment = Alignment.Center
@@ -364,33 +364,34 @@ private fun makeRow() {
             }
             for (i in 0..14) {
                 Row() {
-                    Row(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .background(color = Color.Green),
-                    ) {
-                        Text(
-                            modifier = Modifier
-                                .width(100.dp)
-                                .height(30.dp),
-                            text = summonerName[i],
-                            style = TextStyle(color = Color.White, fontSize = 20.sp)
-                        )
-                        var ddragonName = ddragonChampionInfoName[i]
-                        if (ddragonName == "") {
-                            ddragonName = "0.0"
-                        }
-
-                        Image(
-                            painter = painterResource("drawable/${ddragonName}.jpg"),
-                            contentDescription = "image",
-                            contentScale = ContentScale.Crop,
-                            modifier = Modifier
-                                .size(35.dp)
-                                .clip(CircleShape),
-                        )
-
-                    }
+//                    Row(
+//                        modifier = Modifier
+//                            .padding(3.dp)
+//                            .background(color = Color.Green),
+//                    ) {
+//                        Text(
+//                            modifier = Modifier
+//                                .width(100.dp)
+//                                .height(30.dp),
+//                            text = summonerName[i],
+//                            style = TextStyle(color = Color.White, fontSize = 20.sp)
+//                        )
+//                        var ddragonName = ddragonChampionInfoName[i]
+//                        if (ddragonName == "") {
+//                            ddragonName = "0.0"
+//                        }
+//
+//                        Image(
+//                            painter = painterResource("drawable/${ddragonName}.jpg"),
+//                            contentDescription = "image",
+//                            contentScale = ContentScale.Crop,
+//                            modifier = Modifier
+//                                .size(35.dp)
+//                                .clip(CircleShape),
+//                        )
+//
+//                    }
+                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i])
                     Box(
                         modifier = customModifier()
                             .background(color = getColor(damageDealt[i], true, 1.0)),

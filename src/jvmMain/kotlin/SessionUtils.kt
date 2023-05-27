@@ -18,7 +18,8 @@ object SessionUtils {
                 SummonerInfo(
                     i.get("summonerId").longValue().toString(),
                     i.get("championId").intValue().toString(),
-                    i.get("cellId").intValue().toString())
+                    i.get("cellId").intValue().toString()
+                )
             )
         }
         return ret

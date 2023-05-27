@@ -33,6 +33,10 @@ object ClientRESTs {
         return session
     }
 
+    fun swapPlayer(id: String){
+        post("lol-champ-select/v1/session/trades/$id/request", data["port"], data["token"])
+    }
+
     fun swapBench(key: String){
         post("lol-champ-select/v1/session/bench/swap/$key", data["port"], data["token"])
     }
@@ -76,7 +80,7 @@ object ClientRESTs {
             .build().use { httpClient ->
                 httpClient.execute(request).use { response ->
                     // 401 if wrong user/password
-                    println(response.statusLine.statusCode)
+                    println("Для запроса $url получили statusCode = ${response.statusLine.statusCode}")
                     val entity: HttpEntity = response.entity
                     if (entity != null) {
                         val result: String = EntityUtils.toString(entity)

@@ -10,8 +10,9 @@ object Start {
         val benchChampionIds = SessionUtils.getBenchChampionIds(jsonNode)
         val allies = SessionUtils.getAllies(jsonNode)
         for (ally in allies) {
-            jsonNode = mapper.readTree(ClientRESTs.getSummonerInfoById(ally.summonerId))
+            jsonNode = mapper.readTree(ClientRESTs.getSummonerInfoById(ally.summonerId))    //nут иногда ошибка почему-то
             ally.summonerName = jsonNode.get("displayName").textValue()
+            ally.accountId = jsonNode.get("accountId").longValue().toString()
         }
         val champions = Cache.getAllChampions()?.champions
 

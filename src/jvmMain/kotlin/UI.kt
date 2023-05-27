@@ -11,7 +11,8 @@ data class SummonerInfo(
     var cellId : String?
 ) {
     var summonerName : String = ""
+    var accountId: String? = ""
     override fun toString(): String {
-        return "SummonerInfo(summonerId='$summonerId', championId='$championId', cellId='$cellId', summonerName='$summonerName')"
+        return "SummonerInfo(summonerId='$summonerId', accountId='$accountId', championId='$championId', cellId='$cellId', summonerName='$summonerName')"
     }
 }

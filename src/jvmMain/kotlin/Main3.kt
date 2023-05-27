@@ -1,26 +1,18 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.material.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
 import kotlinx.coroutines.delay
 
 @Composable
@@ -51,6 +43,26 @@ private fun makeRow() {
             uiRows.value[2].summonerInfo?.summonerName ?: "",
             uiRows.value[3].summonerInfo?.summonerName ?: "",
             uiRows.value[4].summonerInfo?.summonerName ?: "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        )
+    }
+    val accountId = remember {
+        mutableListOf(
+            uiRows.value[0].summonerInfo?.accountId ?: "",
+            uiRows.value[1].summonerInfo?.accountId ?: "",
+            uiRows.value[2].summonerInfo?.accountId ?: "",
+            uiRows.value[3].summonerInfo?.accountId ?: "",
+            uiRows.value[4].summonerInfo?.accountId ?: "",
             "",
             "",
             "",
@@ -287,12 +299,16 @@ private fun makeRow() {
             .height(30.dp)
     }
 
+    val scaffoldState = rememberScaffoldState() // this contains the `SnackbarHostState`
+    val coroutineScope = rememberCoroutineScope()
+
     MaterialTheme {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row()
             {
+
                 Box(
                     modifier = Modifier
                         .padding(3.dp)
@@ -306,21 +322,12 @@ private fun makeRow() {
                 Box(
                     modifier = Modifier
                         .padding(3.dp)
-                        .width(35.dp)
-                        .height(35.dp)
+                        .width(50.dp)
+                        .height(50.dp)
                         .background(color = color.value),
                     contentAlignment = Alignment.Center
                 ) {
-                    Image(
-                        painter = painterResource("icons/dd.png"),
-                        contentDescription = "image",
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier.clickable{
-                            //showSnackbar()
-                        },
-                        alignment = Alignment.Center
-                    )
-                    Text(text = "damage dealt", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    makeIcon("dd")
                 }
                 Box(
                     modifier = Modifier
@@ -392,16 +399,20 @@ private fun makeRow() {
                 ) {
                     Text(text = "energy regeneration", style = TextStyle(color = Color.White, fontSize = 14.sp))
                 }
+
             }
             for (i in 0..14) {
                 Row() {
-                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i], championInfoKey[i])
+                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i], championInfoKey[i], accountId[i])
                     Box(
-                        modifier = customModifier()
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(50.dp)
+                            .height(30.dp)
                             .background(color = getColor(damageDealt[i], true, 1.0)),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = damageDealt[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        Text(text = toPercent(damageDealt[i]), style = TextStyle(color = Color.Black, fontSize = 14.sp))
                     }
                     Box(
                         modifier = customModifier()
@@ -481,11 +492,13 @@ private fun makeRow() {
             while (true) {
                 delay(5_000)
                 val newSession = ClientRESTs.mockSession1()
+//                val newSession = ClientRESTs.getSession()
 
                 session.value = newSession
                 uiRows = mutableStateOf(Start.run(session.value))
                 for (i in 0..14) {
                     summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
+                    accountId[i] = uiRows.value[i].summonerInfo?.accountId ?: ""
                     championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
                     championInfoKey[i] = uiRows.value[i].championInfo?.key ?: ""
                     damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
@@ -502,6 +515,12 @@ private fun makeRow() {
             }
         }
     }
+}
+
+fun toPercent(percent:String?) : String {
+    val double = percent?.toDoubleOrNull() ?: return ""
+    val integer = double * 100
+    return "${integer.toInt()} %"
 }
 
 
@@ -530,7 +549,11 @@ private fun getColor(value: String, greaterBetter: Boolean, borderValue: Double)
 
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    val windowState = rememberWindowState(size = DpSize.Unspecified)
+    Window(onCloseRequest = ::exitApplication,
+        resizable = false,
+        state = windowState
+    ) {
         App()
     }
 }

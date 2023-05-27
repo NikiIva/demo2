@@ -8,6 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/courses/Main22.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/courses/Main22.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/icons/dd.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/resources/icons/DAMAGE_DEALT.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +53,9 @@
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Sealed Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -110,13 +114,14 @@
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/courses" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="cache" />
       <recent name="" />
       <recent name="courses" />
       <recent name="pastebin" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.Main3Kt">
-    <configuration name="ClientRESTsTest.testPost" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CacheTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -129,7 +134,7 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;ClientRESTsTest.testPost&quot;" />
+            <option value="--tests &quot;cache.CacheTest.qwe&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -186,10 +191,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Main3Kt" />
+        <item itemvalue="Gradle.CacheTest.qwe" />
         <item itemvalue="Kotlin.Main22Kt" />
         <item itemvalue="Kotlin.MakeSummonerAndChampionKt" />
         <item itemvalue="Gradle.Main3KtTest.qwe" />
-        <item itemvalue="Gradle.ClientRESTsTest.testPost" />
       </list>
     </recent_temporary>
   </component>
@@ -370,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685201840430</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Научился делать снейкбар для клика по иконки баланса">
+      <created>1685203954671</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685203954671</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -440,6 +452,16 @@
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt</url>
           <line>77</line>
           <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt</url>
+          <line>350</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/cache/CacheTest.kt</url>
+          <line>11</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

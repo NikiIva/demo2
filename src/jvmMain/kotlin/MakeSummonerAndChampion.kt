@@ -1,16 +1,11 @@
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -20,15 +15,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
-import androidx.compose.ui.window.rememberWindowState
+import hints.Hint
+import hints.HintType
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import org.apache.commons.logging.Log
 
 @Composable
 fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String, championInfoKey:String, playerId:String) { //у меня сейчас summonerId, возможно, надо accountId
@@ -79,25 +73,29 @@ fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String,
 }
 
 @Composable
-fun makeIcon(path:String, hint:String?, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+fun makeIcon(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
     IconButton(
         onClick = {
             coroutineScope.launch{
-                if (hint!=null) {
+                    val message = when(hint.type){
+                        HintType.EXTRA -> "${hint.description}\nTODO:Подгрузить дополнительную информацию"
+                        else -> hint.description
+                    }
+
                     val result = scaffoldState.snackbarHostState.showSnackbar(
-                        message = hint,
+                        message = message,
                         actionLabel = "Hide"
                     )
                     if (result == SnackbarResult.ActionPerformed) {
 //                                    Toast.makeText(context, "Item recovered", Toast.LENGTH_SHORT)
 //                                        .show()
                     }
-                }
+
             }
         }
     ) {
         Image(
-            painter = painterResource("icons/$path.png"),
+            painter = painterResource("icons/${hint.type.toString()}.png"),
             contentDescription = "image",
             contentScale = ContentScale.Crop,
             alignment = Alignment.Center,

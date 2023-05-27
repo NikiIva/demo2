@@ -14,8 +14,9 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import cache.Cache
+import hints.HintType
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @Composable
 @Preview
@@ -346,7 +347,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIcon("dd", "damage dealt", coroutineScope, scaffoldState)
+                        makeIcon(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier

@@ -1,6 +1,7 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -14,6 +15,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 @Preview
@@ -25,6 +27,7 @@ fun App() {
 
 @Composable
 private fun makeRow() {
+
     val session = remember {
         mutableStateOf(
 //            ClientRESTs.getSession()
@@ -299,219 +302,245 @@ private fun makeRow() {
             .height(30.dp)
     }
 
-    val scaffoldState = rememberScaffoldState() // this contains the `SnackbarHostState`
     val coroutineScope = rememberCoroutineScope()
+    val scaffoldState = rememberScaffoldState()
 
-    MaterialTheme {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Row()
-            {
-
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(139.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "summoner name", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(50.dp)
-                        .height(50.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    makeIcon("dd")
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "damage received", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "attack speed scaling", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "shield modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "healing modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "tenacity", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-                Box(
-                    modifier = Modifier
-                        .padding(3.dp)
-                        .width(100.dp)
-                        .height(30.dp)
-                        .background(color = color.value),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Text(text = "energy regeneration", style = TextStyle(color = Color.White, fontSize = 14.sp))
-                }
-
+    Scaffold(
+        modifier = Modifier
+            .width(800.dp)
+            .height(700.dp),
+        scaffoldState = scaffoldState,
+        snackbarHost = { host ->
+            SnackbarHost(hostState = host){ data ->
+                Snackbar(
+//                    backgroundColor = Color.White,
+                    snackbarData = data,
+                    shape = RoundedCornerShape(20.dp),
+//                    modifier = Modifier
+//                        .padding(bottom = 100.dp)
+                )
             }
-            for (i in 0..14) {
-                Row() {
-                    makeSummonerAndChampion(summonerName[i], ddragonChampionInfoName[i], championInfoKey[i], accountId[i])
+        }) {
+        MaterialTheme {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Row()
+                {
+
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(139.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "summoner name", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
                             .width(50.dp)
-                            .height(30.dp)
-                            .background(color = getColor(damageDealt[i], true, 1.0)),
+                            .height(50.dp)
+                            .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = toPercent(damageDealt[i]), style = TextStyle(color = Color.Black, fontSize = 14.sp))
-                    }
-                    Box(
-                        modifier = customModifier()
-                            .background(color = getColor(damageReceived[i], false, 1.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = damageReceived[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIcon("dd", "damage dealt", coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
                             .width(100.dp)
                             .height(30.dp)
-                            .background(color = getColor(abilityHaste[i], true, 0.0)),
+                            .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = abilityHaste[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        Text(text = "damage received", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "attack speed scaling", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "shield modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "healing modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "tenacity", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(100.dp)
+                            .height(30.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "energy regeneration", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
 
-                    Box(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
-                            .background(color = getColor(attackSpeed[i], true, 0.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = attackSpeed[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
-                    }
+                }
+                for (i in 0..14) {
+                    Row() {
+                        makeSummonerAndChampion(
+                            summonerName[i],
+                            ddragonChampionInfoName[i],
+                            championInfoKey[i],
+                            accountId[i]
+                        )
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(50.dp)
+                                .height(30.dp)
+                                .background(color = getColor(damageDealt[i], true, 1.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(
+                                text = toPercent(damageDealt[i]),
+                                style = TextStyle(color = Color.Black, fontSize = 14.sp)
+                            )
+                        }
+                        Box(
+                            modifier = customModifier()
+                                .background(color = getColor(damageReceived[i], false, 1.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = damageReceived[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(abilityHaste[i], true, 0.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = abilityHaste[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
 
-                    Box(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
-                            .background(color = getColor(shield[i], true, 0.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = shield[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
-                    }
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(attackSpeed[i], true, 0.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = attackSpeed[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
 
-                    Box(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
-                            .background(color = getColor(healing[i], true, 1.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = healing[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
-                    }
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(shield[i], true, 0.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = shield[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
 
-                    Box(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
-                            .background(color = getColor(tenacity[i], true, 0.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = tenacity[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
-                    }
-                    Box(
-                        modifier = Modifier
-                            .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
-                            .background(color = getColor(energy[i], true, 0.0)),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text(text = energy[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(healing[i], true, 1.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = healing[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
+
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(tenacity[i], true, 0.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = tenacity[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
+                        Box(
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(100.dp)
+                                .height(30.dp)
+                                .background(color = getColor(energy[i], true, 0.0)),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text(text = energy[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        }
                     }
                 }
             }
-        }
-        LaunchedEffect(Unit) {
-            while (true) {
-                delay(5_000)
-                val newSession = ClientRESTs.mockSession1()
+
+            LaunchedEffect(Unit) {
+                while (true) {
+                    delay(5_000)
+                    val newSession = ClientRESTs.mockSession1()
 //                val newSession = ClientRESTs.getSession()
 
-                session.value = newSession
-                uiRows = mutableStateOf(Start.run(session.value))
-                for (i in 0..14) {
-                    summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
-                    accountId[i] = uiRows.value[i].summonerInfo?.accountId ?: ""
-                    championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
-                    championInfoKey[i] = uiRows.value[i].championInfo?.key ?: ""
-                    damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
-                    damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
-                    abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
-                    attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
-                    shield[i] = uiRows.value[i].championInfo?.balance?.sheild ?: ""
-                    healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
-                    tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
-                    energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
-                    ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
-                }
+                    session.value = newSession
+                    uiRows = mutableStateOf(Start.run(session.value))
+                    for (i in 0..14) {
+                        summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
+                        accountId[i] = uiRows.value[i].summonerInfo?.accountId ?: ""
+                        championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
+                        championInfoKey[i] = uiRows.value[i].championInfo?.key ?: ""
+                        damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
+                        damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
+                        abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
+                        attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
+                        shield[i] = uiRows.value[i].championInfo?.balance?.sheild ?: ""
+                        healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
+                        tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
+                        energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
+                        ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
+                    }
 
+                }
             }
         }
     }
@@ -554,6 +583,7 @@ fun main() = application {
         resizable = false,
         state = windowState
     ) {
+        println(DpSize.Unspecified)
         App()
     }
 }

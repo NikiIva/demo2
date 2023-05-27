@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Нажатие по иконке ведет к смене чемпиона со скамейки">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Научился делать снейкбар для клика по иконки баланса">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/UI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/UI.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,15 +50,15 @@
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Kotlin Data Class" />
-        <option value="Kotlin Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="qwe" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,19 +80,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_directory_selection": "/Users/nikita/Documents/demo2/src/jvmTest/kotlin",
-    "last_opened_file_path": "/Users/nikita/Documents/demo2/src/jvmMain/resources/icons",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmTest/kotlin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmMain/resources/icons&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/icons" />
@@ -121,29 +116,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.Main3Kt">
-    <configuration name="ClientRESTsTest.asd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanJvmTest" />
-            <option value=":jvmTest" />
-            <option value="--tests &quot;ClientRESTsTest.asd&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ClientRESTsTest.testPost" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -190,6 +162,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Main22Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="courses.Main22Kt" />
+      <module name="demo2.jvmMain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main3Kt" />
       <module name="demo2.jvmMain" />
@@ -207,10 +186,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Main3Kt" />
+        <item itemvalue="Kotlin.Main22Kt" />
         <item itemvalue="Kotlin.MakeSummonerAndChampionKt" />
         <item itemvalue="Gradle.Main3KtTest.qwe" />
         <item itemvalue="Gradle.ClientRESTsTest.testPost" />
-        <item itemvalue="Gradle.ClientRESTsTest.asd" />
       </list>
     </recent_temporary>
   </component>
@@ -384,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685128363127</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Научился делать снейкбар для клика по иконки баланса">
+      <created>1685201840429</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1685201840430</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -409,7 +395,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="image" />
+                        <option value="qwe" />
                       </list>
                     </value>
                   </entry>
@@ -439,7 +425,8 @@
     <MESSAGE value="Добавил картинки на подгрузку" />
     <MESSAGE value="Красивое отображение иконок чемпионов + написал функцию для получения чемпиона со скамейки" />
     <MESSAGE value="Нажатие по иконке ведет к смене чемпиона со скамейки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Нажатие по иконке ведет к смене чемпиона со скамейки" />
+    <MESSAGE value="Научился делать снейкбар для клика по иконки баланса" />
+    <option name="LAST_COMMIT_MESSAGE" value="Научился делать снейкбар для клика по иконки баланса" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -453,11 +440,6 @@
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt</url>
           <line>77</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
-          <line>13</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -6,7 +6,10 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import org.apache.commons.logging.Log
 
@@ -61,8 +65,13 @@ fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String,
             modifier = Modifier
                 .padding(start = 3.dp)
                 .size(35.dp)
-                .clip(CircleShape).clickable {
-                    //SnackbarDemo("qweaf")
+                .clip(CircleShape)
+                .clickable {
+                    try {
+                        ClientRESTs.swapBench(championInfoKey)
+                    } catch(e:Exception){
+                        println("Не удалось поменять чемпиона со скамейки $championInfoKey ошибка:$e")
+                    }
                 },
             alignment = Alignment.Center
         )
@@ -70,55 +79,34 @@ fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String,
 }
 
 @Composable
-fun makeIcon(path:String){
-    Image(
-        painter = painterResource("icons/$path.png"),
-        contentDescription = "image",
-        contentScale = ContentScale.Crop,
-        alignment = Alignment.Center
-    )
-}
-
-@Composable
-fun SnackbarDemo(message : String?) {
-    val scaffoldState = rememberScaffoldState() // this contains the `SnackbarHostState`
-    val coroutineScope = rememberCoroutineScope()
-
-    Scaffold(
-        modifier = Modifier,
-        scaffoldState = scaffoldState // attaching `scaffoldState` to the `Scaffold`
-    ) {
-        Button(
-
-            onClick = {
-                coroutineScope.launch { // using the `coroutineScope` to `launch` showing the snackbar
-                    // taking the `snackbarHostState` from the attached `scaffoldState`
-                    val snackbarResult = scaffoldState.snackbarHostState.showSnackbar(
-                        message = message?: "",
+fun makeIcon(path:String, hint:String?, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+    IconButton(
+        onClick = {
+            coroutineScope.launch{
+                if (hint!=null) {
+                    val result = scaffoldState.snackbarHostState.showSnackbar(
+                        message = hint,
                         actionLabel = "Hide"
                     )
-                    when (snackbarResult) {
-                        SnackbarResult.Dismissed -> println("SnackbarDemo Dismissed")
-                        SnackbarResult.ActionPerformed -> println("SnackbarDemo Snackbar's button clicked")
+                    if (result == SnackbarResult.ActionPerformed) {
+//                                    Toast.makeText(context, "Item recovered", Toast.LENGTH_SHORT)
+//                                        .show()
                     }
                 }
             }
-
-        ) {
-            Text(text = "A button that shows a Snackbar")
         }
-    }
-}
-
-fun mai1n() = application {
-    Window(onCloseRequest = ::exitApplication) {
-        makeSummonerAndChampion("qwe", "Aatrox", "266", "qwe")
+    ) {
+        Image(
+            painter = painterResource("icons/$path.png"),
+            contentDescription = "image",
+            contentScale = ContentScale.Crop,
+            alignment = Alignment.Center,
+        )
     }
 }
 
 fun main() = application {
-    val windowState = rememberWindowState(size = DpSize.Unspecified)
     Window(onCloseRequest = ::exitApplication) {
-        SnackbarDemo("message")
+        makeSummonerAndChampion("qwe", "Aatrox", "266", "qwe")
     }
 }

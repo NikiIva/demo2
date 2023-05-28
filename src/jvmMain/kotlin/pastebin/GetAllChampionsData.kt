@@ -1,5 +1,6 @@
 package pastebin
 
+import cache.Cache
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import ddragon.*
@@ -18,16 +19,8 @@ object GetAllChampionsService {
 
     val allChampions: AllChampions
         get() {
-//            val version : String? =
-//                ExternalRESTs.getCloseableHttpResponse("https://pastebin.com/raw/LmrmUjxD")
-            val version : String? =
-                ExternalRESTs.getCloseableHttpResponse("https://ddragon.leagueoflegends.com/api/versions.json")
-            val versionJson = ObjectMapper().readValue(
-                version,
-                JsonNode::class.java
-            )
             val allChampionsStringData: String? =
-                ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/${versionJson.get(0).textValue()}/data/en_US/champion.json")
+                ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/${Cache.getVersion()}/data/en_US/champion.json")
             var readValue = ObjectMapper().readValue(
                 allChampionsStringData,
                 JsonNode::class.java
@@ -67,6 +60,7 @@ object GetAllChampionsService {
                     val tenacityType = if ( node["tenacityType"]?.doubleValue() == null) "" else node["tenacityType"]?.doubleValue().toString()
                     val energyType = if ( node["energyType"]?.doubleValue() == null) "" else node["energyType"]?.doubleValue().toString()
                     val ddragonChampionName = if ( node["ddragonChampionName"]?.textValue() == null) "" else node["ddragonChampionName"]?.textValue().toString()
+                    val extra = if ( node["extra"]?.textValue() == null) "" else node["extra"]?.textValue().toString()
                     ExternalRESTs.savePng("$ddragonChampionName")
                     return Balance(
                         damageDealt,
@@ -77,7 +71,8 @@ object GetAllChampionsService {
                         healType,
                         tenacityType,
                         energyType,
-                        ddragonChampionName
+                        ddragonChampionName,
+                        extra
                     )
                 }
 
@@ -85,6 +80,7 @@ object GetAllChampionsService {
         }
         println("Не удалось получить баланс арама для $championName")
         return Balance(
+            null,
             null,
             null,
             null,

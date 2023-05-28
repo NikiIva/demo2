@@ -127,7 +127,7 @@ fun makeIconWithSnakeBar(hint: Hint, coroutineScope: CoroutineScope, scaffoldSta
 }
 
 @Composable
-fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState, extra:String){
     Box(
         modifier = Modifier
             .padding(3.dp)
@@ -135,35 +135,51 @@ fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:S
             .height(30.dp),
         contentAlignment = Alignment.Center
     ) {
-        IconButton(
-            modifier = Modifier.background(Color.Red)
-                .padding(3.dp)
-                .width(50.dp)
-                .height(30.dp),
-            onClick = {
-                coroutineScope.launch {
-                    val message = when (hint.type) {
-                        HintType.EXTRA -> "${hint.description}\nTODO:Подгрузить дополнительную информацию"
-                        else -> hint.description
-                    }
+        if (extra != null && !extra.isEmpty()) {
+            IconButton(
+                modifier = Modifier.background(Color.Yellow)
+                    .padding(3.dp)
+                    .width(50.dp)
+                    .height(30.dp),
+                onClick = {
 
-                    val result = scaffoldState.snackbarHostState.showSnackbar(
-                        message = message,
-                        actionLabel = "Hide"
-                    )
-                    if (result == SnackbarResult.ActionPerformed) {
+                    coroutineScope.launch {
+                        val message = when (hint.type) {
+                            HintType.EXTRA -> "${extra}"
+                            else -> hint.description
+                        }
+
+                        val result = scaffoldState.snackbarHostState.showSnackbar(
+                            message = message,
+                            actionLabel = "Hide"
+                        )
+                        if (result == SnackbarResult.ActionPerformed) {
 //                                    Toast.makeText(context, "Item recovered", Toast.LENGTH_SHORT)
 //                                        .show()
+                        }
+
                     }
 
                 }
+            ) {
+//                Image(
+//                    modifier = Modifier
+//                        .padding(3.dp)
+//                        .fillMaxSize(),
+//                    painter = painterResource("icons/${hint.type}.png"),
+//                    contentDescription = "image",
+//                    contentScale = ContentScale.Crop,
+//                    alignment = Alignment.Center,
+//                )
             }
-        ) {
+
+        }
+        else {
             Image(
                 modifier = Modifier
                     .padding(3.dp)
                     .fillMaxSize(),
-                painter = painterResource("icons/${hint.type}.png"),
+                painter = painterResource("drawable/0.0.jpg"),
                 contentDescription = "image",
                 contentScale = ContentScale.Crop,
                 alignment = Alignment.Center,

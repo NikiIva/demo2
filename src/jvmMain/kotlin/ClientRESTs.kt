@@ -466,7 +466,7 @@ object ClientRESTs {
                 "    {\n" +
                 "      \"assignedPosition\": \"\",\n" +
                 "      \"cellId\": 2,\n" +
-                "      \"championId\": 267,\n" +
+                "      \"championId\": 22,\n" +
                 "      \"championPickIntent\": 0,\n" +
                 "      \"entitledFeatureType\": \"NONE\",\n" +
                 "      \"nameVisibilityType\": \"VISIBLE\",\n" +

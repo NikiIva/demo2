@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Сделал tooltip для иконок">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил столбец для extra info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/Balance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/Balance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/pastebin/GetAllChampionsServiceTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/pastebin/GetAllChampionsServiceTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/zxc.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,31 +86,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmTest/kotlin&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmMain/resources/icons&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_directory_selection": "/Users/nikita/Documents/demo2/src/jvmTest/kotlin",
+    "last_opened_file_path": "/Users/nikita/Documents/demo2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/icons" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources" />
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jvmMain/resources" />
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/courses" />
@@ -429,7 +431,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685260135139</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Добавил столбец для extra info">
+      <created>1685283348948</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1685283348949</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -487,7 +496,8 @@
     <MESSAGE value="Научился делать снейкбар для клика по иконки баланса" />
     <MESSAGE value="Рефакторинг снейкбара" />
     <MESSAGE value="Сделал tooltip для иконок" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал tooltip для иконок" />
+    <MESSAGE value="Добавил столбец для extra info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил столбец для extra info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -504,7 +514,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt</url>
-          <line>28</line>
+          <line>21</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">

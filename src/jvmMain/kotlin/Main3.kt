@@ -295,6 +295,25 @@ private fun makeRow() {
             uiRows.value[14].championInfo?.balance?.energy ?: "",
         )
     }
+    val extra = remember {
+        mutableListOf(
+            uiRows.value[0].championInfo?.balance?.extra ?: "",
+            uiRows.value[1].championInfo?.balance?.extra ?: "",
+            uiRows.value[2].championInfo?.balance?.extra ?: "",
+            uiRows.value[3].championInfo?.balance?.extra ?: "",
+            uiRows.value[4].championInfo?.balance?.extra ?: "",
+            uiRows.value[5].championInfo?.balance?.extra ?: "",
+            uiRows.value[6].championInfo?.balance?.extra ?: "",
+            uiRows.value[7].championInfo?.balance?.extra ?: "",
+            uiRows.value[8].championInfo?.balance?.extra ?: "",
+            uiRows.value[9].championInfo?.balance?.extra ?: "",
+            uiRows.value[10].championInfo?.balance?.extra ?: "",
+            uiRows.value[11].championInfo?.balance?.extra ?: "",
+            uiRows.value[12].championInfo?.balance?.extra ?: "",
+            uiRows.value[13].championInfo?.balance?.extra ?: "",
+            uiRows.value[14].championInfo?.balance?.extra ?: ""
+        )
+    }
 
     val color = remember {
         mutableStateOf(Color.Gray)
@@ -536,7 +555,7 @@ private fun makeRow() {
                         ) {
                             Text(text = toPercent(energy[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
-                        makeExtraInfoBox(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
+                        makeExtraInfoBox(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState, extra[i])
                     }
                 }
             }
@@ -563,6 +582,7 @@ private fun makeRow() {
                         tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
                         energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
                         ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
+                        extra[i] = uiRows.value[i].championInfo?.balance?.extra ?: ""
                     }
 
                 }
@@ -572,7 +592,9 @@ private fun makeRow() {
 }
 
 fun toAttackSpeed(string:String?):String {
-    val double = string?.toDoubleOrNull() ?: return ""
+    var double = string?.toDoubleOrNull() ?: return ""
+    double = double * 100
+    println("attackspeed $double")
     if (double < 0){
         return "$double%"
     }
@@ -632,9 +654,12 @@ private fun getColor(value: String, greaterBetter: Boolean, borderValue: Double)
 
 fun main() = application {
     val windowState = rememberWindowState(size = DpSize.Unspecified)
+    val icon = painterResource("main.png")
     Window(onCloseRequest = ::exitApplication,
         resizable = false,
-        state = windowState
+        state = windowState,
+        icon = icon
+
     ) {
         println(DpSize.Unspecified)
         App()

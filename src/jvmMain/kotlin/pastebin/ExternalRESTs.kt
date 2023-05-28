@@ -1,5 +1,6 @@
 package pastebin
 
+import cache.Cache
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.impl.client.HttpClients
 import org.apache.http.util.EntityUtils
@@ -29,7 +30,7 @@ object ExternalRESTs {
         if (exists){
             return
         }
-        val kindred = "https://ddragon.leagueoflegends.com/cdn/13.4.1/img/champion/$ddragonChampionName.png"
+        val kindred = "https://ddragon.leagueoflegends.com/cdn/${Cache.getVersion()}/img/champion/$ddragonChampionName.png"
         HttpClients.createDefault().use { httpClient ->
             println("Отправялем запрос для $ddragonChampionName")
             val request = HttpGet(kindred)

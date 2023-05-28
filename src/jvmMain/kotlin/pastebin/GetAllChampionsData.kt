@@ -18,8 +18,16 @@ object GetAllChampionsService {
 
     val allChampions: AllChampions
         get() {
+//            val version : String? =
+//                ExternalRESTs.getCloseableHttpResponse("https://pastebin.com/raw/LmrmUjxD")
+            val version : String? =
+                ExternalRESTs.getCloseableHttpResponse("https://ddragon.leagueoflegends.com/api/versions.json")
+            val versionJson = ObjectMapper().readValue(
+                version,
+                JsonNode::class.java
+            )
             val allChampionsStringData: String? =
-                ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/13.4.1/data/en_US/champion.json") //todo 13.4.1 научиться менять
+                ExternalRESTs.getCloseableHttpResponse("http://ddragon.leagueoflegends.com/cdn/${versionJson.get(0).textValue()}/data/en_US/champion.json")
             var readValue = ObjectMapper().readValue(
                 allChampionsStringData,
                 JsonNode::class.java
@@ -54,7 +62,7 @@ object GetAllChampionsService {
                     val damageReceivedType = if ( node["damageReceivedType"]?.doubleValue() == null) "" else node["damageReceivedType"]?.doubleValue().toString()
                     val abilityHasteType = if ( node["abilityHasteType"]?.doubleValue() == null) "" else node["abilityHasteType"]?.doubleValue().toString()
                     val attackSpeedType = if ( node["attackSpeedType"]?.doubleValue() == null) "" else node["attackSpeedType"]?.doubleValue().toString()
-                    val sheldType = if ( node["shieldType"]?.doubleValue() == null) "" else node["sheldType"]?.doubleValue().toString()
+                    val sheldType = if ( node["shieldType"]?.doubleValue() == null) "" else node["shieldType"]?.doubleValue().toString()
                     val healType = if ( node["healType"]?.doubleValue() == null) "" else node["healType"]?.doubleValue().toString()
                     val tenacityType = if ( node["tenacityType"]?.doubleValue() == null) "" else node["tenacityType"]?.doubleValue().toString()
                     val energyType = if ( node["energyType"]?.doubleValue() == null) "" else node["energyType"]?.doubleValue().toString()
@@ -75,7 +83,18 @@ object GetAllChampionsService {
 
             }
         }
-        throw RuntimeException("Не удалось получить баланс арама для $championName")
+        println("Не удалось получить баланс арама для $championName")
+        return Balance(
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+        )
     }
 
     private fun getChampion(jsonNode: JsonNode): Champion {

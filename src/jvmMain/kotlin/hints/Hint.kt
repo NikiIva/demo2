@@ -2,6 +2,7 @@ package hints
 
 data class Hint(
     val type:HintType,
+    val title:String,
     val description:String,
     val extra:String?
 )

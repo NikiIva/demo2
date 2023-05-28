@@ -432,7 +432,7 @@ object ClientRESTs {
                 "    {\n" +
                 "      \"assignedPosition\": \"\",\n" +
                 "      \"cellId\": 0,\n" +
-                "      \"championId\": 99,\n" +
+                "      \"championId\": 30,\n" +
                 "      \"championPickIntent\": 0,\n" +
                 "      \"entitledFeatureType\": \"NONE\",\n" +
                 "      \"nameVisibilityType\": \"VISIBLE\",\n" +
@@ -449,7 +449,7 @@ object ClientRESTs {
                 "    {\n" +
                 "      \"assignedPosition\": \"\",\n" +
                 "      \"cellId\": 1,\n" +
-                "      \"championId\": 15,\n" +
+                "      \"championId\": 902,\n" +
                 "      \"championPickIntent\": 0,\n" +
                 "      \"entitledFeatureType\": \"NONE\",\n" +
                 "      \"nameVisibilityType\": \"VISIBLE\",\n" +

@@ -1,6 +1,4 @@
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -9,12 +7,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Window
@@ -60,23 +60,44 @@ fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String,
                 .padding(start = 3.dp)
                 .size(35.dp)
                 .clip(CircleShape)
-                .clickable {
-                    try {
-                        ClientRESTs.swapBench(championInfoKey)
-                    } catch(e:Exception){
-                        println("Не удалось поменять чемпиона со скамейки $championInfoKey ошибка:$e")
-                    }
-                },
+//                .clickable {
+//                    try {
+//                        ClientRESTs.swapBench(championInfoKey)
+//                    } catch(e:Exception){
+//                        println("Не удалось поменять чемпиона со скамейки $championInfoKey ошибка:$e")
+//                    }
+//                }
+            ,
             alignment = Alignment.Center
         )
     }
 }
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun makeIcon(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
-    IconButton(
-        onClick = {
-            coroutineScope.launch{
+fun makeIconWithSnakeBar(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+    TooltipArea(
+        tooltip = {
+            Surface(
+                modifier = Modifier.shadow(4.dp),
+                color = Color(255, 255, 210),
+                shape = RoundedCornerShape(4.dp)
+            ) {
+                Text(
+                    text = "Tooltip for ${hint}",
+                    modifier = Modifier.padding(10.dp)
+                )
+            }
+        },
+        delayMillis = 600, // in milliseconds
+        tooltipPlacement = TooltipPlacement.CursorPoint(
+            alignment = Alignment.BottomEnd,
+            offset =  DpOffset.Zero // tooltip offset
+        )
+    ) {
+        IconButton(
+            onClick = {
+                coroutineScope.launch{
                     val message = when(hint.type){
                         HintType.EXTRA -> "${hint.description}\nTODO:Подгрузить дополнительную информацию"
                         else -> hint.description
@@ -91,15 +112,63 @@ fun makeIcon(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldS
 //                                        .show()
                     }
 
+                }
             }
+        ) {
+            Image(
+                painter = painterResource("icons/${hint.type.toString()}.png"),
+                contentDescription = "image",
+                contentScale = ContentScale.Crop,
+                alignment = Alignment.Center,
+            )
         }
+    }
+
+}
+
+@Composable
+fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+    Box(
+        modifier = Modifier
+            .padding(3.dp)
+            .width(50.dp)
+            .height(30.dp),
+        contentAlignment = Alignment.Center
     ) {
-        Image(
-            painter = painterResource("icons/${hint.type.toString()}.png"),
-            contentDescription = "image",
-            contentScale = ContentScale.Crop,
-            alignment = Alignment.Center,
-        )
+        IconButton(
+            modifier = Modifier.background(Color.Red)
+                .padding(3.dp)
+                .width(50.dp)
+                .height(30.dp),
+            onClick = {
+                coroutineScope.launch {
+                    val message = when (hint.type) {
+                        HintType.EXTRA -> "${hint.description}\nTODO:Подгрузить дополнительную информацию"
+                        else -> hint.description
+                    }
+
+                    val result = scaffoldState.snackbarHostState.showSnackbar(
+                        message = message,
+                        actionLabel = "Hide"
+                    )
+                    if (result == SnackbarResult.ActionPerformed) {
+//                                    Toast.makeText(context, "Item recovered", Toast.LENGTH_SHORT)
+//                                        .show()
+                    }
+
+                }
+            }
+        ) {
+            Image(
+                modifier = Modifier
+                    .padding(3.dp)
+                    .fillMaxSize(),
+                painter = painterResource("icons/${hint.type}.png"),
+                contentDescription = "image",
+                contentScale = ContentScale.Crop,
+                alignment = Alignment.Center,
+            )
+        }
     }
 }
 

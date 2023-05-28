@@ -20,15 +20,15 @@ object Cache {
         if (hints.isNotEmpty()) {
             return hints
         }
-        hints.add(Hint(HintType.DAMAGE_DEALT, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.DAMAGE_RECEIVED, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.ABILITY_HASTE, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.ATTACK_SPEED_SCALING, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.SHIELD_MODIFIER, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.HEALING_MODIFIER, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.TENACITY, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.ENERGY_REGENERATION, "Сколько урона вы наносите", null))
-        hints.add(Hint(HintType.EXTRA, "Сколько урона вы наносите", null))
+        hints.add(Hint(HintType.DAMAGE_DEALT, "damage dealt", "Сколько урона вы наносите", null))
+        hints.add(Hint(HintType.DAMAGE_RECEIVED, "damage received", "Сколько урона вы получаете", null))
+        hints.add(Hint(HintType.ABILITY_HASTE, "ability haste", "Ускорение перезерядки умений", null))
+        hints.add(Hint(HintType.ATTACK_SPEED_SCALING, "attack speed scaling","Ускорение скорости атаки", null))
+        hints.add(Hint(HintType.SHIELD_MODIFIER, "shield modifier", "Сила накладываемых щитов", null))
+        hints.add(Hint(HintType.HEALING_MODIFIER, "healing modifier","сила лечения", null))
+        hints.add(Hint(HintType.TENACITY, "tenacity","Сопротивление контролю", null))
+        hints.add(Hint(HintType.ENERGY_REGENERATION, "energy regeneration", "Восстановление энергии", null))
+        hints.add(Hint(HintType.EXTRA, "extra","Уникальные изменения чемпионов", null))
         return hints
     }
 

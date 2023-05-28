@@ -5,7 +5,7 @@ data class Balance (
     var damageReceived : String?,
     var abilityHaste : String?,
     var attackSpeed : String?,
-    var sheild : String?,
+    var shield : String?,
     var healing : String?,
     var tenacity: String?,
     var energy : String?,

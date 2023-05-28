@@ -1,4 +1,5 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -7,6 +8,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -17,6 +20,7 @@ import androidx.compose.ui.window.rememberWindowState
 import cache.Cache
 import hints.HintType
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 @Preview
@@ -217,21 +221,21 @@ private fun makeRow() {
     }
     val shield = remember {
         mutableListOf(
-            uiRows.value[0].championInfo?.balance?.sheild ?: "",
-            uiRows.value[1].championInfo?.balance?.sheild ?: "",
-            uiRows.value[2].championInfo?.balance?.sheild ?: "",
-            uiRows.value[3].championInfo?.balance?.sheild ?: "",
-            uiRows.value[4].championInfo?.balance?.sheild ?: "",
-            uiRows.value[5].championInfo?.balance?.sheild ?: "",
-            uiRows.value[6].championInfo?.balance?.sheild ?: "",
-            uiRows.value[7].championInfo?.balance?.sheild ?: "",
-            uiRows.value[8].championInfo?.balance?.sheild ?: "",
-            uiRows.value[9].championInfo?.balance?.sheild ?: "",
-            uiRows.value[10].championInfo?.balance?.sheild ?: "",
-            uiRows.value[11].championInfo?.balance?.sheild ?: "",
-            uiRows.value[12].championInfo?.balance?.sheild ?: "",
-            uiRows.value[13].championInfo?.balance?.sheild ?: "",
-            uiRows.value[14].championInfo?.balance?.sheild ?: ""
+            uiRows.value[0].championInfo?.balance?.shield ?: "",
+            uiRows.value[1].championInfo?.balance?.shield ?: "",
+            uiRows.value[2].championInfo?.balance?.shield ?: "",
+            uiRows.value[3].championInfo?.balance?.shield ?: "",
+            uiRows.value[4].championInfo?.balance?.shield ?: "",
+            uiRows.value[5].championInfo?.balance?.shield ?: "",
+            uiRows.value[6].championInfo?.balance?.shield ?: "",
+            uiRows.value[7].championInfo?.balance?.shield ?: "",
+            uiRows.value[8].championInfo?.balance?.shield ?: "",
+            uiRows.value[9].championInfo?.balance?.shield ?: "",
+            uiRows.value[10].championInfo?.balance?.shield ?: "",
+            uiRows.value[11].championInfo?.balance?.shield ?: "",
+            uiRows.value[12].championInfo?.balance?.shield ?: "",
+            uiRows.value[13].championInfo?.balance?.shield ?: "",
+            uiRows.value[14].championInfo?.balance?.shield ?: ""
         )
     }
     val healing = remember {
@@ -308,8 +312,8 @@ private fun makeRow() {
 
     Scaffold(
         modifier = Modifier
-            .width(800.dp)
-            .height(700.dp),
+            .width(700.dp)
+            .height(800.dp),
         scaffoldState = scaffoldState,
         snackbarHost = { host ->
             SnackbarHost(hostState = host){ data ->
@@ -324,15 +328,18 @@ private fun makeRow() {
         }) {
         MaterialTheme {
             Column(
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.Start
             ) {
-                Row()
+                Row(
+                    modifier = Modifier.padding(3.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                )
                 {
 
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(139.dp)
+                            .width(135.dp)
                             .height(30.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
@@ -347,77 +354,89 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIcon(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "damage received", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.DAMAGE_RECEIVED), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ABILITY_HASTE), coroutineScope, scaffoldState)
+//                        Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "attack speed scaling", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ATTACK_SPEED_SCALING), coroutineScope, scaffoldState)
+//                        Text(text = "attack speed scaling", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "shield modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.SHIELD_MODIFIER), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "healing modifier", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.HEALING_MODIFIER), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "tenacity", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.TENACITY), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
                             .padding(3.dp)
-                            .width(100.dp)
-                            .height(30.dp)
+                            .width(50.dp)
+                            .height(50.dp)
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text(text = "energy regeneration", style = TextStyle(color = Color.White, fontSize = 14.sp))
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ENERGY_REGENERATION), coroutineScope, scaffoldState)
+                    }
+                    Box(
+                        modifier = Modifier
+                            .padding(3.dp)
+                            .width(50.dp)
+                            .height(50.dp)
+                            .background(color = color.value),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        makeIconWithSnakeBar(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
                     }
 
                 }
@@ -443,76 +462,81 @@ private fun makeRow() {
                             )
                         }
                         Box(
-                            modifier = customModifier()
+                            modifier = Modifier
+                                .padding(3.dp)
+                                .width(50.dp)
+                                .height(30.dp)
                                 .background(color = getColor(damageReceived[i], false, 1.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = damageReceived[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toPercent(damageReceived[i]),
+                                style = TextStyle(color = Color.Black, fontSize = 14.sp))
                         }
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
                                 .background(color = getColor(abilityHaste[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = abilityHaste[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toIntegerWithoutPlus(abilityHaste[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
 
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
                                 .background(color = getColor(attackSpeed[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = attackSpeed[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toAttackSpeed(attackSpeed[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
 
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
-                                .background(color = getColor(shield[i], true, 0.0)),
+                                .background(color = getColor(shield[i], true, 1.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = shield[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toPercent(shield[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
 
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
                                 .background(color = getColor(healing[i], true, 1.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = healing[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toPercent(healing[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
 
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
                                 .background(color = getColor(tenacity[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = tenacity[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toIntegerWithPlus(tenacity[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
                         Box(
                             modifier = Modifier
                                 .padding(3.dp)
-                                .width(100.dp)
+                                .width(50.dp)
                                 .height(30.dp)
                                 .background(color = getColor(energy[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = energy[i], style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(text = toPercent(energy[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
                         }
+                        makeExtraInfoBox(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
                     }
                 }
             }
@@ -534,7 +558,7 @@ private fun makeRow() {
                         damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
                         abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
                         attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
-                        shield[i] = uiRows.value[i].championInfo?.balance?.sheild ?: ""
+                        shield[i] = uiRows.value[i].championInfo?.balance?.shield ?: ""
                         healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
                         tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
                         energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
@@ -547,10 +571,38 @@ private fun makeRow() {
     }
 }
 
+fun toAttackSpeed(string:String?):String {
+    val double = string?.toDoubleOrNull() ?: return ""
+    if (double < 0){
+        return "$double%"
+    }
+    return "+$double%"
+}
+
 fun toPercent(percent:String?) : String {
     val double = percent?.toDoubleOrNull() ?: return ""
     val integer = double * 100
     return "${integer.toInt()} %"
+}
+
+fun toIntegerWithoutPlus(percent:String?):String {
+    val ret = percent?.toDoubleOrNull() ?: return ""
+    val res = ret.toInt()
+    if (res == 0) {
+        return ""
+    }
+    return "${ret.toInt()}"
+}
+
+fun toIntegerWithPlus(string:String?):String{
+    val ret = toIntegerWithoutPlus(string)
+    if (ret == ""){
+        return ""
+    }
+    if (ret.toInt() < 0) {
+        return ret
+    }
+    return "+$ret"
 }
 
 

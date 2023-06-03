@@ -4,15 +4,175 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил столбец для extra info">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Исправил баг с версией&#10;Добавил поле для extra info">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/Balance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/Balance.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/ExternalRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Aatrox.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ahri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Akali.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Akshan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Alistar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Amumu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Anivia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Annie.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Aphelios.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ashe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/AurelionSol.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Azir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Bard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Belveth.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Blitzcrank.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Brand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Braum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Caitlyn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Camille.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Cassiopeia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Chogath.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Corki.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Darius.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Diana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/DrMundo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Draven.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ekko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Elise.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Evelynn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ezreal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Fiddlesticks.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Fiora.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Fizz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Galio.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Gangplank.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Garen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Gnar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Gragas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Graves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Gwen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Hecarim.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Heimerdinger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Illaoi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Irelia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ivern.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Janna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/JarvanIV.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Jax.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Jayce.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Jhin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Jinx.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/KSante.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kaisa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kalista.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Karma.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Karthus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kassadin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Katarina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kayle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kayn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kennen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Khazix.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kindred.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Kled.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/KogMaw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Leblanc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/LeeSin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Leona.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Lillia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Lissandra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Lucian.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Lulu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Lux.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Malphite.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Malzahar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Maokai.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/MasterYi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Milio.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/MissFortune.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/MonkeyKing.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Mordekaiser.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Morgana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nami.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nasus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nautilus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Neeko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nidalee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nilah.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nocturne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Nunu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Olaf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Orianna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ornn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Pantheon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Poppy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Pyke.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Qiyana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Quinn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Rakan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Rammus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/RekSai.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Rell.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Renata.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Renekton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Rengar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Riven.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Rumble.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ryze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Samira.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sejuani.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Senna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Seraphine.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sett.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Shaco.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Shen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Shyvana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Singed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sivir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Skarner.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sona.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Soraka.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Swain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Sylas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Syndra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/TahmKench.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Taliyah.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Talon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Taric.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Teemo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Thresh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Tristana.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Trundle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Tryndamere.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/TwistedFate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Twitch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Udyr.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Urgot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Varus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Vayne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Veigar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Velkoz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Vex.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Vi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Viego.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Viktor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Vladimir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Volibear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Warwick.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Xayah.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Xerath.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/XinZhao.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Yasuo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Yone.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Yorick.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Yuumi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zed.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zeri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Ziggs.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zilean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zoe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/Zyra.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -438,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685283348949</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Исправил баг с версией&#10;Добавил поле для extra info">
+      <created>1685298514259</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1685298514259</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -497,7 +664,8 @@
     <MESSAGE value="Рефакторинг снейкбара" />
     <MESSAGE value="Сделал tooltip для иконок" />
     <MESSAGE value="Добавил столбец для extra info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил столбец для extra info" />
+    <MESSAGE value="Исправил баг с версией&#10;Добавил поле для extra info" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправил баг с версией&#10;Добавил поле для extra info" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -521,6 +689,14 @@
           <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/pastebin/GetAllChampionsServiceTest.kt</url>
           <line>15</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt</url>
+          <line>354</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

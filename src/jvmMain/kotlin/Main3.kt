@@ -326,6 +326,10 @@ private fun makeRow() {
             .height(30.dp)
     }
 
+    val circle = remember {
+        mutableStateOf(0)
+    }
+
     val coroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
 
@@ -562,7 +566,7 @@ private fun makeRow() {
 
             LaunchedEffect(Unit) {
                 while (true) {
-                    delay(5_000)
+                    delay(10_000)
                     val newSession = ClientRESTs.mockSession1()
 //                val newSession = ClientRESTs.getSession()
 
@@ -654,11 +658,11 @@ private fun getColor(value: String, greaterBetter: Boolean, borderValue: Double)
 
 fun main() = application {
     val windowState = rememberWindowState(size = DpSize.Unspecified)
-    val icon = painterResource("main.png")
+//    val icon = painterResource("main.png")
     Window(onCloseRequest = ::exitApplication,
         resizable = false,
         state = windowState,
-        icon = icon
+//        icon = icon
 
     ) {
         println(DpSize.Unspecified)

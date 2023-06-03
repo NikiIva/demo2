@@ -175,15 +175,25 @@ fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:S
 
         }
         else {
-            Image(
+            Text(
                 modifier = Modifier
-                    .padding(3.dp)
-                    .fillMaxSize(),
-                painter = painterResource("drawable/0.0.jpg"),
-                contentDescription = "image",
-                contentScale = ContentScale.Crop,
-                alignment = Alignment.Center,
+                    .background(Color.Black)
+                    .padding(start=3.dp)
+                    .size(35.dp),
+                softWrap = false,
+                text = "",
+                textAlign = TextAlign.Left,
+                overflow = TextOverflow.Ellipsis
             )
+//            Image(
+//                modifier = Modifier
+//                    .padding(3.dp)
+//                    .fillMaxSize(),
+//                painter = painterResource("drawable/0.0.jpg"),
+//                contentDescription = "image",
+//                contentScale = ContentScale.Crop,
+//                alignment = Alignment.Center,
+//            )
         }
     }
 }

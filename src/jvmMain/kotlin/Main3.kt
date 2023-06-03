@@ -1,5 +1,4 @@
 import androidx.compose.desktop.ui.tooling.preview.Preview
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -8,8 +7,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -20,7 +17,6 @@ import androidx.compose.ui.window.rememberWindowState
 import cache.Cache
 import hints.HintType
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @Composable
 @Preview
@@ -40,7 +36,7 @@ private fun makeRow() {
         )
     }
 
-    var uiRows = remember {
+    val uiRows = remember {
         mutableStateOf(Start.run(session.value))
     }
 
@@ -85,250 +81,85 @@ private fun makeRow() {
         )
     }
     val championInfoName = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.name ?: "",
-            uiRows.value[1].championInfo?.name ?: "",
-            uiRows.value[2].championInfo?.name ?: "",
-            uiRows.value[3].championInfo?.name ?: "",
-            uiRows.value[4].championInfo?.name ?: "",
-            uiRows.value[5].championInfo?.name ?: "",
-            uiRows.value[6].championInfo?.name ?: "",
-            uiRows.value[7].championInfo?.name ?: "",
-            uiRows.value[8].championInfo?.name ?: "",
-            uiRows.value[9].championInfo?.name ?: "",
-            uiRows.value[10].championInfo?.name ?: "",
-            uiRows.value[11].championInfo?.name ?: "",
-            uiRows.value[12].championInfo?.name ?: "",
-            uiRows.value[13].championInfo?.name ?: "",
-            uiRows.value[14].championInfo?.name ?: "",
-            uiRows.value[15].championInfo?.name ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.name ?: ""}
+            .toList()
+            .toMutableList()
     }
     val championInfoKey = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.key ?: "",
-            uiRows.value[1].championInfo?.key ?: "",
-            uiRows.value[2].championInfo?.key ?: "",
-            uiRows.value[3].championInfo?.key ?: "",
-            uiRows.value[4].championInfo?.key ?: "",
-            uiRows.value[5].championInfo?.key ?: "",
-            uiRows.value[6].championInfo?.key ?: "",
-            uiRows.value[7].championInfo?.key ?: "",
-            uiRows.value[8].championInfo?.key ?: "",
-            uiRows.value[9].championInfo?.key ?: "",
-            uiRows.value[10].championInfo?.key ?: "",
-            uiRows.value[11].championInfo?.key ?: "",
-            uiRows.value[12].championInfo?.key ?: "",
-            uiRows.value[13].championInfo?.key ?: "",
-            uiRows.value[14].championInfo?.key ?: "",
-            uiRows.value[15].championInfo?.key ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.key ?: ""}
+            .toList()
+            .toMutableList()
     }
     val ddragonChampionInfoName = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[1].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[2].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[3].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[4].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[5].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[6].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[7].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[8].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[9].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[10].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[11].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[12].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[13].championInfo?.balance?.ddragonChampionName ?: "",
-            uiRows.value[14].championInfo?.balance?.ddragonChampionName ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.ddragonChampionName ?: ""}
+            .toList()
+            .toMutableList()
     }
-    val damageDealt = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[1].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[2].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[3].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[4].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[5].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[6].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[7].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[8].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[9].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[10].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[11].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[12].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[13].championInfo?.balance?.damageDealt ?: "",
-            uiRows.value[14].championInfo?.balance?.damageDealt ?: ""
-        )
+    val damageDealt =  remember {
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.damageDealt ?: ""}
+            .toList()
+            .toMutableList()
     }
     val damageReceived = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[1].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[2].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[3].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[4].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[5].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[6].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[7].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[8].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[9].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[10].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[11].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[12].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[13].championInfo?.balance?.damageReceived ?: "",
-            uiRows.value[14].championInfo?.balance?.damageReceived ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.damageReceived ?: ""}
+            .toList()
+            .toMutableList()
     }
     val abilityHaste = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[1].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[2].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[3].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[4].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[5].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[6].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[7].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[8].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[9].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[10].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[11].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[12].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[13].championInfo?.balance?.abilityHaste ?: "",
-            uiRows.value[14].championInfo?.balance?.abilityHaste ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.abilityHaste ?: ""}
+            .toList()
+            .toMutableList()
     }
     val attackSpeed = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[1].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[2].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[3].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[4].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[5].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[6].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[7].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[8].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[9].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[10].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[11].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[12].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[13].championInfo?.balance?.attackSpeed ?: "",
-            uiRows.value[14].championInfo?.balance?.attackSpeed ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.attackSpeed ?: ""}
+            .toList()
+            .toMutableList()
     }
     val shield = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.shield ?: "",
-            uiRows.value[1].championInfo?.balance?.shield ?: "",
-            uiRows.value[2].championInfo?.balance?.shield ?: "",
-            uiRows.value[3].championInfo?.balance?.shield ?: "",
-            uiRows.value[4].championInfo?.balance?.shield ?: "",
-            uiRows.value[5].championInfo?.balance?.shield ?: "",
-            uiRows.value[6].championInfo?.balance?.shield ?: "",
-            uiRows.value[7].championInfo?.balance?.shield ?: "",
-            uiRows.value[8].championInfo?.balance?.shield ?: "",
-            uiRows.value[9].championInfo?.balance?.shield ?: "",
-            uiRows.value[10].championInfo?.balance?.shield ?: "",
-            uiRows.value[11].championInfo?.balance?.shield ?: "",
-            uiRows.value[12].championInfo?.balance?.shield ?: "",
-            uiRows.value[13].championInfo?.balance?.shield ?: "",
-            uiRows.value[14].championInfo?.balance?.shield ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.shield ?: ""}
+            .toList()
+            .toMutableList()
     }
     val healing = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.healing ?: "",
-            uiRows.value[1].championInfo?.balance?.healing ?: "",
-            uiRows.value[2].championInfo?.balance?.healing ?: "",
-            uiRows.value[3].championInfo?.balance?.healing ?: "",
-            uiRows.value[4].championInfo?.balance?.healing ?: "",
-            uiRows.value[5].championInfo?.balance?.healing ?: "",
-            uiRows.value[6].championInfo?.balance?.healing ?: "",
-            uiRows.value[7].championInfo?.balance?.healing ?: "",
-            uiRows.value[8].championInfo?.balance?.healing ?: "",
-            uiRows.value[9].championInfo?.balance?.healing ?: "",
-            uiRows.value[10].championInfo?.balance?.healing ?: "",
-            uiRows.value[11].championInfo?.balance?.healing ?: "",
-            uiRows.value[12].championInfo?.balance?.healing ?: "",
-            uiRows.value[13].championInfo?.balance?.healing ?: "",
-            uiRows.value[14].championInfo?.balance?.healing ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.healing ?: ""}
+            .toList()
+            .toMutableList()
     }
     val tenacity = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[1].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[2].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[3].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[4].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[5].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[6].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[7].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[8].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[9].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[10].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[11].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[12].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[13].championInfo?.balance?.tenacity ?: "",
-            uiRows.value[14].championInfo?.balance?.tenacity ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.tenacity ?: ""}
+            .toList()
+            .toMutableList()
     }
     val energy = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.energy ?: "",
-            uiRows.value[1].championInfo?.balance?.energy ?: "",
-            uiRows.value[2].championInfo?.balance?.energy ?: "",
-            uiRows.value[3].championInfo?.balance?.energy ?: "",
-            uiRows.value[4].championInfo?.balance?.energy ?: "",
-            uiRows.value[5].championInfo?.balance?.energy ?: "",
-            uiRows.value[6].championInfo?.balance?.energy ?: "",
-            uiRows.value[7].championInfo?.balance?.energy ?: "",
-            uiRows.value[8].championInfo?.balance?.energy ?: "",
-            uiRows.value[9].championInfo?.balance?.energy ?: "",
-            uiRows.value[10].championInfo?.balance?.energy ?: "",
-            uiRows.value[11].championInfo?.balance?.energy ?: "",
-            uiRows.value[12].championInfo?.balance?.energy ?: "",
-            uiRows.value[13].championInfo?.balance?.energy ?: "",
-            uiRows.value[14].championInfo?.balance?.energy ?: "",
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.energy ?: ""}
+            .toList()
+            .toMutableList()
     }
     val extra = remember {
-        mutableListOf(
-            uiRows.value[0].championInfo?.balance?.extra ?: "",
-            uiRows.value[1].championInfo?.balance?.extra ?: "",
-            uiRows.value[2].championInfo?.balance?.extra ?: "",
-            uiRows.value[3].championInfo?.balance?.extra ?: "",
-            uiRows.value[4].championInfo?.balance?.extra ?: "",
-            uiRows.value[5].championInfo?.balance?.extra ?: "",
-            uiRows.value[6].championInfo?.balance?.extra ?: "",
-            uiRows.value[7].championInfo?.balance?.extra ?: "",
-            uiRows.value[8].championInfo?.balance?.extra ?: "",
-            uiRows.value[9].championInfo?.balance?.extra ?: "",
-            uiRows.value[10].championInfo?.balance?.extra ?: "",
-            uiRows.value[11].championInfo?.balance?.extra ?: "",
-            uiRows.value[12].championInfo?.balance?.extra ?: "",
-            uiRows.value[13].championInfo?.balance?.extra ?: "",
-            uiRows.value[14].championInfo?.balance?.extra ?: ""
-        )
+        uiRows.value.stream()
+            .map {v -> v.championInfo?.balance?.extra ?: ""}
+            .toList()
+            .toMutableList()
+    }
+    val q = remember {
+        mutableStateOf(1)
     }
 
     val color = remember {
         mutableStateOf(Color.Gray)
     }
 
-    fun customModifier(): Modifier {
-        return Modifier
-            .padding(3.dp)
-            .width(100.dp)
-            .height(30.dp)
-    }
-
-    val circle = remember {
-        mutableStateOf(0)
-    }
 
     val coroutineScope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
@@ -387,7 +218,11 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.DAMAGE_RECEIVED), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(
+                            Cache.getHintByType(HintType.DAMAGE_RECEIVED),
+                            coroutineScope,
+                            scaffoldState
+                        )
                     }
                     Box(
                         modifier = Modifier
@@ -408,7 +243,11 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ATTACK_SPEED_SCALING), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(
+                            Cache.getHintByType(HintType.ATTACK_SPEED_SCALING),
+                            coroutineScope,
+                            scaffoldState
+                        )
 //                        Text(text = "attack speed scaling", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
                     Box(
@@ -419,7 +258,11 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.SHIELD_MODIFIER), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(
+                            Cache.getHintByType(HintType.SHIELD_MODIFIER),
+                            coroutineScope,
+                            scaffoldState
+                        )
                     }
                     Box(
                         modifier = Modifier
@@ -429,7 +272,11 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.HEALING_MODIFIER), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(
+                            Cache.getHintByType(HintType.HEALING_MODIFIER),
+                            coroutineScope,
+                            scaffoldState
+                        )
                     }
                     Box(
                         modifier = Modifier
@@ -449,7 +296,11 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ENERGY_REGENERATION), coroutineScope, scaffoldState)
+                        makeIconWithSnakeBar(
+                            Cache.getHintByType(HintType.ENERGY_REGENERATION),
+                            coroutineScope,
+                            scaffoldState
+                        )
                     }
                     Box(
                         modifier = Modifier
@@ -492,8 +343,10 @@ private fun makeRow() {
                                 .background(color = getColor(damageReceived[i], false, 1.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = toPercent(damageReceived[i]),
-                                style = TextStyle(color = Color.Black, fontSize = 14.sp))
+                            Text(
+                                text = toPercent(damageReceived[i]),
+                                style = TextStyle(color = Color.Black, fontSize = 14.sp)
+                            )
                         }
                         Box(
                             modifier = Modifier
@@ -503,7 +356,10 @@ private fun makeRow() {
                                 .background(color = getColor(abilityHaste[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = toIntegerWithoutPlus(abilityHaste[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(
+                                text = toIntegerWithoutPlus(abilityHaste[i]),
+                                style = TextStyle(color = Color.White, fontSize = 14.sp)
+                            )
                         }
 
                         Box(
@@ -514,7 +370,10 @@ private fun makeRow() {
                                 .background(color = getColor(attackSpeed[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = toAttackSpeed(attackSpeed[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(
+                                text = toAttackSpeed(attackSpeed[i]),
+                                style = TextStyle(color = Color.White, fontSize = 14.sp)
+                            )
                         }
 
                         Box(
@@ -547,7 +406,10 @@ private fun makeRow() {
                                 .background(color = getColor(tenacity[i], true, 0.0)),
                             contentAlignment = Alignment.Center
                         ) {
-                            Text(text = toIntegerWithPlus(tenacity[i]), style = TextStyle(color = Color.White, fontSize = 14.sp))
+                            Text(
+                                text = toIntegerWithPlus(tenacity[i]),
+                                style = TextStyle(color = Color.White, fontSize = 14.sp)
+                            )
                         }
                         Box(
                             modifier = Modifier
@@ -562,38 +424,64 @@ private fun makeRow() {
                         makeExtraInfoBox(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState, extra[i])
                     }
                 }
+                Box(
+                    modifier = Modifier
+                        .padding(3.dp)
+                        .width(135.dp)
+                        .height(30.dp)
+                        .background(color = color.value),
+                    contentAlignment = Alignment.Center
+                ) {
+                    Text(text = q.value.toString(), style = TextStyle(color = Color.White, fontSize = 14.sp))
+//                    Text(text = uiRows.value.)
+                }
             }
+
 
             LaunchedEffect(Unit) {
                 while (true) {
-                    delay(10_000)
-                    val newSession = ClientRESTs.mockSession1()
-//                val newSession = ClientRESTs.getSession()
-
-                    session.value = newSession
-                    uiRows = mutableStateOf(Start.run(session.value))
-                    for (i in 0..14) {
-                        summonerName[i] = uiRows.value[i].summonerInfo?.summonerName ?: ""
-                        accountId[i] = uiRows.value[i].summonerInfo?.accountId ?: ""
-                        championInfoName[i] = uiRows.value[i].championInfo?.name ?: ""
-                        championInfoKey[i] = uiRows.value[i].championInfo?.key ?: ""
-                        damageDealt[i] = uiRows.value[i].championInfo?.balance?.damageDealt ?: ""
-                        damageReceived[i] = uiRows.value[i].championInfo?.balance?.damageReceived ?: ""
-                        abilityHaste[i] = uiRows.value[i].championInfo?.balance?.abilityHaste ?: ""
-                        attackSpeed[i] = uiRows.value[i].championInfo?.balance?.attackSpeed ?: ""
-                        shield[i] = uiRows.value[i].championInfo?.balance?.shield ?: ""
-                        healing[i] = uiRows.value[i].championInfo?.balance?.healing ?: ""
-                        tenacity[i] = uiRows.value[i].championInfo?.balance?.tenacity ?: ""
-                        energy[i] = uiRows.value[i].championInfo?.balance?.energy ?: ""
-                        ddragonChampionInfoName[i] = uiRows.value[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
-                        extra[i] = uiRows.value[i].championInfo?.balance?.extra ?: ""
+                    delay(5_000)
+                    var newSession = "null"
+                    q.value++
+                    if (q.value % 2 == 0) {
+                        newSession = ClientRESTs.mockSession1()
+                        println("QQQ")
+                    } else {
+                        newSession = ClientRESTs.mockSession()
+                        println("ZZZ")
                     }
+                    session.value = newSession
+                    uiRows.value = Start.run(session.value)
+//                val newSession = ClientRESTs.getSession()
+//                    val session = ClientRESTs.mockSession1()
+                    val run = uiRows.value
 
+                    for (i in 0..14) {
+                        summonerName[i] = run[i].summonerInfo?.summonerName ?: ""
+                        accountId[i] = run[i].summonerInfo?.accountId ?: ""
+                        championInfoName[i] = run[i].championInfo?.name ?: ""
+                        championInfoKey[i] = run[i].championInfo?.key ?: ""
+                        damageDealt[i] = run[i].championInfo?.balance?.damageDealt ?: ""
+                        damageReceived[i] = run[i].championInfo?.balance?.damageReceived ?: ""
+                        abilityHaste[i] = run[i].championInfo?.balance?.abilityHaste ?: ""
+                        attackSpeed[i] = run[i].championInfo?.balance?.attackSpeed ?: ""
+                        shield[i] = run[i].championInfo?.balance?.shield ?: ""
+                        healing[i] = run[i].championInfo?.balance?.healing ?: ""
+                        tenacity[i] = run[i].championInfo?.balance?.tenacity ?: ""
+                        energy[i] = run[i].championInfo?.balance?.energy ?: ""
+                        ddragonChampionInfoName[i] = run[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
+                        extra[i] = run[i].championInfo?.balance?.extra ?: ""
+                    }
                 }
             }
         }
     }
+
+
 }
+
+
+
 
 fun toAttackSpeed(string:String?):String {
     var double = string?.toDoubleOrNull() ?: return ""

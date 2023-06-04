@@ -28,7 +28,6 @@ fun App() {
 
 @Composable
 private fun makeRow() {
-
     val uiRows = remember {
         mutableStateOf(Start.run(
 //            ClientRESTs.getSession()
@@ -82,14 +81,6 @@ private fun makeRow() {
             .toList()
             .toMutableList()
     }
-
-    fun qwe(function: () -> String): List<String> { //todo
-        return uiRows.value.stream()
-            .map {v -> function.invoke()}
-            .toList()
-            .toMutableList()
-    }
-
     val championInfoKey = remember {
         uiRows.value.stream()
             .map {v -> v.championInfo?.key ?: ""}

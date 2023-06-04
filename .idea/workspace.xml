@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Bugfix - ппочинил баг, когда не обновляется таблица">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Рефакторинг">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +91,8 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
     &quot;last_directory_selection&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmTest/kotlin&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
@@ -121,7 +121,7 @@
       <recent name="pastebin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Main3Kt">
+  <component name="RunManager" selected="Kotlin.Cacerts">
     <configuration name="GetAllChampionsServiceTest.testVersion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,29 +168,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Main3KtTest.testToIntegerWithPlus" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanJvmTest" />
-            <option value=":jvmTest" />
-            <option value="--tests &quot;Main3KtTest.testToIntegerWithPlus&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="Main3KtTest.testToIntegerWithoutPlus" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -214,20 +191,38 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="Cacerts" type="JetRunConfigurationType" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main3Kt" />
       <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cacerts" />
+      <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.GetAllChampionsServiceTest.testVersion" />
+      <item itemvalue="Gradle.Main3KtTest.testToAttackSpeed" />
+      <item itemvalue="Gradle.Main3KtTest.testToIntegerWithoutPlus" />
+      <item itemvalue="Kotlin.Main3Kt" />
+      <item itemvalue="Kotlin.Cacerts" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Cacerts" />
         <item itemvalue="Kotlin.Main3Kt" />
         <item itemvalue="Gradle.GetAllChampionsServiceTest.testVersion" />
         <item itemvalue="Gradle.Main3KtTest.testToAttackSpeed" />
         <item itemvalue="Gradle.Main3KtTest.testToIntegerWithoutPlus" />
-        <item itemvalue="Gradle.Main3KtTest.testToIntegerWithPlus" />
       </list>
     </recent_temporary>
   </component>
@@ -464,7 +459,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685822873368</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Рефакторинг">
+      <created>1685880028492</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1685880028492</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -526,7 +528,8 @@
     <MESSAGE value="Исправил баг с версией&#10;Добавил поле для extra info" />
     <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Bugfix - gочинил баг, когда не обновляется таблица" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix - gочинил баг, когда не обновляется таблица" />
+    <MESSAGE value="Рефакторинг" />
+    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

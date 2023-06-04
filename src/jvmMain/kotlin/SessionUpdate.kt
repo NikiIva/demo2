@@ -5,7 +5,7 @@ import kotlinx.coroutines.delay
 object SessionUpdate {
 
     fun updateSession(
-        uiRows : String,
+        uiRows : MutableState<ArrayList<UIRow>>,
         summonerName : MutableList<String>,
         accountId : MutableList<String>,
         championInfoName : MutableList<String>,
@@ -19,10 +19,20 @@ object SessionUpdate {
         tenacity : MutableList<String>,
         energy : MutableList<String>,
         ddragonChampionInfoName : MutableList<String>,
-        extra : MutableList<String>
+        extra : MutableList<String>,
+        q : MutableState<Int>
     ) {
-        val session = ClientRESTs.mockSession1()
-        val run = Start.run(session)
+        var newSession = "null"
+        q.value++
+        if (q.value % 2 == 0) {
+            newSession = ClientRESTs.mockSession1()
+        } else {
+            newSession = ClientRESTs.mockSession()
+        }
+        uiRows.value = Start.run(newSession)
+//                val newSession = ClientRESTs.getSession()
+//                    val session = ClientRESTs.mockSession1()
+        val run = uiRows.value
 
         for (i in 0..14) {
             summonerName[i] = run[i].summonerInfo?.summonerName ?: ""

@@ -29,15 +29,11 @@ fun App() {
 @Composable
 private fun makeRow() {
 
-    val session = remember {
-        mutableStateOf(
+    val uiRows = remember {
+        mutableStateOf(Start.run(
 //            ClientRESTs.getSession()
             ClientRESTs.mockSession()
-        )
-    }
-
-    val uiRows = remember {
-        mutableStateOf(Start.run(session.value))
+        ))
     }
 
     val summonerName = remember {
@@ -86,6 +82,14 @@ private fun makeRow() {
             .toList()
             .toMutableList()
     }
+
+    fun qwe(function: () -> String): List<String> { //todo
+        return uiRows.value.stream()
+            .map {v -> function.invoke()}
+            .toList()
+            .toMutableList()
+    }
+
     val championInfoKey = remember {
         uiRows.value.stream()
             .map {v -> v.championInfo?.key ?: ""}
@@ -441,43 +445,13 @@ private fun makeRow() {
             LaunchedEffect(Unit) {
                 while (true) {
                     delay(5_000)
-                    var newSession = "null"
-                    q.value++
-                    if (q.value % 2 == 0) {
-                        newSession = ClientRESTs.mockSession1()
-                        println("QQQ")
-                    } else {
-                        newSession = ClientRESTs.mockSession()
-                        println("ZZZ")
-                    }
-                    session.value = newSession
-                    uiRows.value = Start.run(session.value)
-//                val newSession = ClientRESTs.getSession()
-//                    val session = ClientRESTs.mockSession1()
-                    val run = uiRows.value
-
-                    for (i in 0..14) {
-                        summonerName[i] = run[i].summonerInfo?.summonerName ?: ""
-                        accountId[i] = run[i].summonerInfo?.accountId ?: ""
-                        championInfoName[i] = run[i].championInfo?.name ?: ""
-                        championInfoKey[i] = run[i].championInfo?.key ?: ""
-                        damageDealt[i] = run[i].championInfo?.balance?.damageDealt ?: ""
-                        damageReceived[i] = run[i].championInfo?.balance?.damageReceived ?: ""
-                        abilityHaste[i] = run[i].championInfo?.balance?.abilityHaste ?: ""
-                        attackSpeed[i] = run[i].championInfo?.balance?.attackSpeed ?: ""
-                        shield[i] = run[i].championInfo?.balance?.shield ?: ""
-                        healing[i] = run[i].championInfo?.balance?.healing ?: ""
-                        tenacity[i] = run[i].championInfo?.balance?.tenacity ?: ""
-                        energy[i] = run[i].championInfo?.balance?.energy ?: ""
-                        ddragonChampionInfoName[i] = run[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
-                        extra[i] = run[i].championInfo?.balance?.extra ?: ""
-                    }
+                    SessionUpdate.updateSession(uiRows, summonerName, accountId, championInfoName,
+                        championInfoKey, damageDealt, damageReceived, abilityHaste, attackSpeed,
+                        shield, healing, tenacity, energy, ddragonChampionInfoName, extra, q)
                 }
             }
         }
     }
-
-
 }
 
 

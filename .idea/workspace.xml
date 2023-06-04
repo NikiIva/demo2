@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Мелкие правки">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Bugfix - ппочинил баг, когда не обновляется таблица">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -458,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685815792745</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Bugfix - gочинил баг, когда не обновляется таблица">
+      <created>1685822873367</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1685822873368</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -519,7 +525,8 @@
     <MESSAGE value="Добавил столбец для extra info" />
     <MESSAGE value="Исправил баг с версией&#10;Добавил поле для extra info" />
     <MESSAGE value="Мелкие правки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Мелкие правки" />
+    <MESSAGE value="Bugfix - gочинил баг, когда не обновляется таблица" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix - gочинил баг, когда не обновляется таблица" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

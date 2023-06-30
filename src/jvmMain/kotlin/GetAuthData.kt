@@ -2,6 +2,7 @@ import org.apache.commons.lang3.SystemUtils
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.lang.RuntimeException
+import java.util.*
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 import java.util.stream.Collectors
@@ -22,6 +23,15 @@ object GetAuthData {
                 val token = getToken(collect)
                 val map = mapOf(Pair("port", port), Pair("token", token))
                 return map
+            }
+            if (SystemUtils.OS_NAME.lowercase(Locale.ENGLISH).startsWith("windows")) {
+                val proc = Runtime.getRuntime().exec("wmic PROCESS WHERE name='LeagueClientUx.exe' GET commandline")
+                val stdIn = BufferedReader(InputStreamReader(proc.inputStream))
+                val collect = stdIn.lines()
+                    .collect(Collectors.toList())
+                val port = getPort(collect)
+                val token = getToken(collect)
+                return mapOf(Pair("port", port), Pair("token", token))
             }
             throw RuntimeException("Не удалось получить данные для авторизации")
             //todo windows

@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Рефакторинг">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

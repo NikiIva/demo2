@@ -84,7 +84,7 @@ object ClientRESTs {
                     val entity: HttpEntity = response.entity
                     if (entity != null) {
                         val result: String = EntityUtils.toString(entity)
-                        println(result)
+                        print(result)
                         return result
                     }
                 }

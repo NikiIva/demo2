@@ -22,12 +22,15 @@ object SessionUpdate {
         extra : MutableList<String>,
         q : MutableState<Int>
     ) {
+        println("Производим обновление сессии")
         var newSession = "null"
         q.value++
         if (q.value % 2 == 0) {
-            newSession = ClientRESTs.mockSession1()
+            newSession = ClientRESTs.getSession()
+//            newSession = ClientRESTs.mockSession1()
         } else {
-            newSession = ClientRESTs.mockSession()
+            newSession = ClientRESTs.getSession()
+//            newSession = ClientRESTs.mockSession()
         }
         uiRows.value = Start.run(newSession)
 //                val newSession = ClientRESTs.getSession()

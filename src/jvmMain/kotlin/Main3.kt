@@ -30,8 +30,8 @@ fun App() {
 private fun makeRow() {
     val uiRows = remember {
         mutableStateOf(Start.run(
-//            ClientRESTs.getSession()
-            ClientRESTs.mockSession()
+            ClientRESTs.getSession()
+//            ClientRESTs.mockSession()
         ))
     }
 

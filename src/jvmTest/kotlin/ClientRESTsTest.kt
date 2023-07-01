@@ -22,6 +22,6 @@ class ClientRESTsTest {
 
     @Test
     fun zxc(){
-        println(ClientRESTs.getCurrentAccountId())
+        println(ClientRESTs.getCurrentSummonerInfo())
     }
 }

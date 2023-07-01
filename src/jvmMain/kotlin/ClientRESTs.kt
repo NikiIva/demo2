@@ -13,8 +13,9 @@ import org.apache.http.util.EntityUtils
 object ClientRESTs {
     val data = GetAuthData.data
 
-    fun getCurrentAccountId() : String{
-        return getData("lol-rso-auth/va/authorization", data["port"], data["token"])
+    fun getCurrentSummonerInfo() : String {
+        return getData("lol-summoner/v1/current-summoner", data["port"], data["token"])
+        //{"accountId":200220790,"displayName":"LightWin","internalName":"LightWin","
     }
 
     fun getCurrentChampion():String{

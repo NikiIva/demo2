@@ -33,25 +33,38 @@ object Start {
         return uiRow
     }
 
-    fun runGame() : String{
+    fun runGame() : ArrayList<UIRow> {
         val session = ServerRESTs.mockGame1()
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
         jsonNode = jsonNode.get("participants")
-        val list = ArrayList<InGameSummonerInfo>()
-        val summoners = ArrayList<SummonerInfo>()
+        val summoners = ArrayList<InGameSummonerInfo>()
+        val currentSummonerInfo = ClientRESTs.getCurrentSummonerInfo()
+        val currentSummonerInfoNode = mapper.readTree(currentSummonerInfo)
+        val currentSummonerName = currentSummonerInfoNode.get("displayName").textValue()
+        var currentTeamNumber : Int = 0
         for (i in 0..9) {
-            list.add(
+            if (jsonNode.get(i).get("summonerName").textValue() == currentSummonerName) {
+                currentTeamNumber = jsonNode.get(i).get("teamId").intValue()
+            }
+        }
+        for (i in 0..9) {
+            summoners.add(
                 InGameSummonerInfo(
                     jsonNode.get(i).get("teamId").intValue(),
-                    jsonNode.get(i).get("championId").intValue(),
-                    jsonNode.get(i).get("summonerName").toString()
+                    jsonNode.get(i).get("championId").intValue().toString(),
+                    jsonNode.get(i).get("summonerName").textValue(),
+                    jsonNode.get(i).get("teamId").intValue() == currentTeamNumber
                 )
             )
         }
+        val champions = Cache.getAllChampions()?.champions
         val uiRow = ArrayList<UIRow>()
-//        for ()
-        return "qwe"
+        for (summoner in summoners) {
+            uiRow.add(UIRow(inGameSummonerInfo = summoner,
+                championInfo = GetAllChampionsService.getChampionById(summoner.championId, champions)))
+        }
+        return uiRow
     }
 }
 

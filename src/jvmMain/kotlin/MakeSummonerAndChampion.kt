@@ -189,7 +189,7 @@ fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:S
 //                modifier = Modifier
 //                    .padding(3.dp)
 //                    .fillMaxSize(),
-//                painter = painterResource("drawable/0.0.jpg"),
+//                painter = painterResource("drawable/image.png"),
 //                contentDescription = "image",
 //                contentScale = ContentScale.Crop,
 //                alignment = Alignment.Center,

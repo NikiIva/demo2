@@ -15,6 +15,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import cache.Cache
+import courses.App2
 import hints.HintType
 import kotlinx.coroutines.delay
 
@@ -509,6 +510,7 @@ private fun getColor(value: String, greaterBetter: Boolean, borderValue: Double)
 }
 
 
+@OptIn(ExperimentalMaterialApi::class)
 fun main() = application {
     val windowState = rememberWindowState(size = DpSize.Unspecified)
 //    val icon = painterResource("main.png")
@@ -518,7 +520,8 @@ fun main() = application {
 //        icon = icon
 
     ) {
-        println(DpSize.Unspecified)
         App()
+        Thread.sleep(60_000)
+        App2()
     }
 }

@@ -13,6 +13,8 @@ data class SummonerInfoFromServer(
 
 data class InGameSummonerInfo(
     val teamId : Int?,
-    val championId: Int?,
-    val summonerName : String?
-)
+    val championId: String?,
+    val summonerName : String?,
+    val isAlly : Boolean
+) {
+}

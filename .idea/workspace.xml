@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Cacerts - нормально обновляются данные во время выбора чемпиона">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="ingame - пытаюсь сделать NavController">
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/demo2_jvm_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/demo2_jvm_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/NavigatorController.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/courses/Main01.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/courses/Main01.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/resources/drawable/0.0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/resources/drawable/image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +73,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="jdkForImporter" value="openjdk-20" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2P9ezDANlG3plMWZILimMma4auI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -95,20 +97,20 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
     &quot;last_directory_selection&quot;: &quot;C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmMain/kotlin/navigation&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/navigation" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/icons" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources" />
-      <recent name="$PROJECT_DIR$/src/jvmMain/kotlin" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -126,31 +128,7 @@
       <recent name="pastebin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Main01Kt">
-    <configuration name="ClientRESTsTest.zxc" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanJvmTest" />
-            <option value=":jvmTest" />
-            <option value="--tests" />
-            <option value="&quot;ClientRESTsTest.zxc&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Kotlin.Cacert3">
     <configuration name="StartTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -174,9 +152,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Cacert3" type="JetRunConfigurationType">
+      <option name="MAIN_CLASS_NAME" value="Main3Kt" />
+      <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cacerts" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Cacerts" />
+      <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main01Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="courses.Main01Kt" />
       <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -184,13 +181,15 @@
     <configuration name="Main2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="courses.Main2Kt" />
       <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main3Kt" />
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="demo2.jvmMain" />
+      <shortenClasspath name="NONE" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,20 +203,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.ClientRESTsTest.zxc" />
       <item itemvalue="Gradle.StartTest.qwe" />
+      <item itemvalue="Kotlin.Cacert3" />
       <item itemvalue="Kotlin.Unnamed" />
+      <item itemvalue="Kotlin.MainKt" />
       <item itemvalue="Kotlin.Main01Kt" />
       <item itemvalue="Kotlin.Main2Kt" />
-      <item itemvalue="Kotlin.Main3Kt" />
+      <item itemvalue="Kotlin.Cacerts" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Cacerts" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.Main01Kt" />
-        <item itemvalue="Kotlin.Main3Kt" />
         <item itemvalue="Kotlin.Main2Kt" />
         <item itemvalue="Gradle.StartTest.qwe" />
-        <item itemvalue="Gradle.ClientRESTsTest.zxc" />
       </list>
     </recent_temporary>
   </component>
@@ -468,7 +468,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688142121623</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="ingame - пытаюсь сделать NavController">
+      <created>1688225600023</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1688225600024</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -506,7 +513,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="2 - удалось кинуть get запрос к current-summoner" />
     <MESSAGE value="3 - Добавил получение текущей сессии, получение информации из пастебина, получение всех клиентов из ddragon" />
     <MESSAGE value="4" />
     <MESSAGE value="5 - добавил trustStore" />
@@ -531,7 +537,8 @@
     <MESSAGE value="Bugfix - gочинил баг, когда не обновляется таблица" />
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="Добавил работу на Windows" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил работу на Windows" />
+    <MESSAGE value="ingame - пытаюсь сделать NavController" />
+    <option name="LAST_COMMIT_MESSAGE" value="ingame - пытаюсь сделать NavController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

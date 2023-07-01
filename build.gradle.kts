@@ -58,69 +58,19 @@ kotlin {
                 // https://mvnrepository.com/artifact/org.apache.xmlgraphics/batik-transcoder
                 implementation("org.apache.xmlgraphics:batik-transcoder:1.16")
 
-                //navigation
-                val nav_version = "2.6.0"
-
-                // Java language implementation
-                implementation("androidx.navigation:navigation-fragment:$nav_version")
-                implementation("androidx.navigation:navigation-ui:$nav_version")
-
-                // Kotlin
-                implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-                implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-
-                // Feature module Support
-                implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
-
-                // Testing Navigation
-//                androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
-
-                // Jetpack Compose Integration
-                implementation("androidx.navigation:navigation-compose:$nav_version")
 
 
 
-                // https://mvnrepository.com/artifact/io.kotest/kotest-assertions-core-jvm
-//                implementation("io.kotest:kotest-assertions-core-jvm:5.6.1")
-                // мокито
-//                implementation("org.mockito:mockito-core:5.3.1")
-                // junit 5
-//                implementation("org.junit.jupiter:junit-jupiter-engine:5.0.0")
             }
         }
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test"))
                 implementation(kotlin("test-annotations-common"))
-//                implementation(project(":core"))
-//                implementation(kotlin("test-junit5"))
-//                implementation("org.junit.jupiter:junit-jupiter-api:5.9.3")
-
-//                implementation("org.spekframework.spek2:spek-dsl-jvm:$spek2Version")
-//                runtimeOnly("org.spekframework.spek2:spek-runtime-jvm:$spek2Version")
-//                runtimeOnly("org.spekframework.spek2:spek-runner-junit5:$spek2Version")
-
-
-//                implementation("org.xmlunit:xmlunit-core:2.6.0")
-
-//                runtimeOnly("org.junit.jupiter:junit-jupiter-engine:5.9.3")
-//                implementation("org.jetbrains.kotlin:kotlin-reflect:1.8.21")
-//                runtimeOnly("com.fasterxml.woodstox:woodstox-core:5.0.3")
-
-
             }
         }
     }
 }
-
-
-
-//tasks {
-//    // Use the native JUnit support of Gradle.
-//    "test"(Test::class) {
-//        useJUnitPlatform()
-//    }
-//}
 
 compose.desktop {
     application {

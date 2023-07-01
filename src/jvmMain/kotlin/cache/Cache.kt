@@ -2,7 +2,7 @@ package cache
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
-import ddragon.AllChampions
+import DTO.AllChampions
 import hints.Hint
 import hints.HintType
 import pastebin.ExternalRESTs
@@ -24,6 +24,10 @@ object Cache {
             JsonNode::class.java
         )
         return versionJson.get(0).textValue()
+    }
+
+    fun getApiKey():String {
+        return "RGAPI-c9ac4676-7b13-479b-97b9-34d409dacff5"
     }
 
     fun getAllChampions(): AllChampions? {

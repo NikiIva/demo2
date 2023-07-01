@@ -13,6 +13,10 @@ import org.apache.http.util.EntityUtils
 object ClientRESTs {
     val data = GetAuthData.data
 
+    fun getCurrentAccountId() : String{
+        return getData("lol-rso-auth/va/authorization", data["port"], data["token"])
+    }
+
     fun getCurrentChampion():String{
         return getData("lol-champ-select/v1/grid-champions/53", data["port"], data["token"])
     }
@@ -637,4 +641,6 @@ object ClientRESTs {
                 "  ]\n" +
                 "}"
     }
+
+
 }

@@ -1,4 +1,4 @@
-package ddragon
+package DTO
 
 import pastebin.Balance
 

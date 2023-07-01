@@ -1,8 +1,10 @@
-import ddragon.Champion
+import DTO.Champion
+import DTO.InGameSummonerInfo
 
 data class UIRow (
-    val summonerInfo : SummonerInfo?,
-    val championInfo: Champion?
+    val summonerInfo : SummonerInfo? = null,
+    val championInfo: Champion?,
+    val inGameSummonerInfo : InGameSummonerInfo? = null
 )
 
 data class SummonerInfo(

@@ -19,4 +19,9 @@ class ClientRESTsTest {
     fun asd(){
         println(ClientRESTs.getCurrentChampion())
     }
+
+    @Test
+    fun zxc(){
+        println(ClientRESTs.getCurrentAccountId())
+    }
 }

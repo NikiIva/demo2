@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Рефакторинг">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил работу на Windows">
+      <change afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/StartTest.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/GetAuthData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/GetAuthData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/UI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/UI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ddragon/DDragon.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/DDragon.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/pastebin/GetAllChampionsData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ClientRESTsTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +59,8 @@
         <option value="Class" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Sealed Class" />
-        <option value="JUnit4 Test Class" />
         <option value="Kotlin Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -81,7 +90,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmTest/kotlin&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2&quot;,
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
@@ -107,14 +116,14 @@
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/courses" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="cache" />
       <recent name="" />
+      <recent name="cache" />
       <recent name="courses" />
       <recent name="pastebin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Cacerts">
-    <configuration name="GetAllChampionsServiceTest.testVersion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Kotlin.Unnamed">
+    <configuration name="ClientRESTsTest.zxc" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +136,8 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;pastebin.GetAllChampionsServiceTest.testVersion&quot;" />
+            <option value="--tests" />
+            <option value="&quot;ClientRESTsTest.zxc&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -135,10 +145,10 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Main3KtTest.testToAttackSpeed" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ImageKtTest.asd" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -151,7 +161,7 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;Main3KtTest.testToAttackSpeed&quot;" />
+            <option value="--tests &quot;courses.ImageKtTest.asd&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -159,10 +169,10 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Main3KtTest.testToIntegerWithoutPlus" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ImageKtTest.tryCache" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -175,7 +185,7 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;Main3KtTest.testToIntegerWithoutPlus&quot;" />
+            <option value="--tests &quot;courses.ImageKtTest.tryCache&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,21 +193,59 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="Cacerts" type="JetRunConfigurationType" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main3Kt" />
-      <module name="demo2.jvmMain" />
-      <shortenClasspath name="NONE" />
-      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="ServerRESTsTest.testGetSesion" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;ServerRESTsTest.testGetSesion&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
     </configuration>
-    <configuration name="Main3Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Cacerts" />
-      <module name="demo2.jvmMain" />
+    <configuration name="StartTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;StartTest.qwe&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unnamed" type="JetRunConfigurationType" nameIsGenerated="true">
+      <module name="demo2.commonTest" />
       <shortenClasspath name="NONE" />
       <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
       <method v="2">
@@ -205,19 +253,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.GetAllChampionsServiceTest.testVersion" />
-      <item itemvalue="Gradle.Main3KtTest.testToAttackSpeed" />
-      <item itemvalue="Gradle.Main3KtTest.testToIntegerWithoutPlus" />
-      <item itemvalue="Kotlin.Main3Kt" />
-      <item itemvalue="Kotlin.Cacerts" />
+      <item itemvalue="Gradle.ClientRESTsTest.zxc" />
+      <item itemvalue="Gradle.ImageKtTest.asd" />
+      <item itemvalue="Gradle.ImageKtTest.tryCache" />
+      <item itemvalue="Gradle.ServerRESTsTest.testGetSesion" />
+      <item itemvalue="Gradle.StartTest.qwe" />
+      <item itemvalue="Kotlin.Unnamed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.Cacerts" />
-        <item itemvalue="Kotlin.Main3Kt" />
-        <item itemvalue="Gradle.GetAllChampionsServiceTest.testVersion" />
-        <item itemvalue="Gradle.Main3KtTest.testToAttackSpeed" />
-        <item itemvalue="Gradle.Main3KtTest.testToIntegerWithoutPlus" />
+        <item itemvalue="Gradle.ClientRESTsTest.zxc" />
+        <item itemvalue="Gradle.StartTest.qwe" />
+        <item itemvalue="Gradle.ImageKtTest.tryCache" />
+        <item itemvalue="Gradle.ImageKtTest.asd" />
+        <item itemvalue="Gradle.ServerRESTsTest.testGetSesion" />
       </list>
     </recent_temporary>
   </component>
@@ -461,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685880028492</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Добавил работу на Windows">
+      <created>1688142121623</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1688142121623</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -499,7 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1 - Чтение данных из shell mac" />
     <MESSAGE value="2 - удалось кинуть get запрос к current-summoner" />
     <MESSAGE value="3 - Добавил получение текущей сессии, получение информации из пастебина, получение всех клиентов из ddragon" />
     <MESSAGE value="4" />
@@ -524,7 +579,8 @@
     <MESSAGE value="Мелкие правки" />
     <MESSAGE value="Bugfix - gочинил баг, когда не обновляется таблица" />
     <MESSAGE value="Рефакторинг" />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг" />
+    <MESSAGE value="Добавил работу на Windows" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил работу на Windows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -548,6 +604,34 @@
           <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/pastebin/GetAllChampionsServiceTest.kt</url>
           <line>15</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt</url>
+          <line>16</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/StartTest.kt</url>
+          <line>8</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmTest/java/courses/ImageKtTest.kt</url>
+          <line>25</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmTest/java/courses/ImageKtTest.kt</url>
+          <line>18</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
+          <line>53</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

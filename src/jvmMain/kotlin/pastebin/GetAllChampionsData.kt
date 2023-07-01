@@ -3,7 +3,7 @@ package pastebin
 import cache.Cache
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
-import ddragon.*
+import DTO.*
 
 object GetAllChampionsService {
 

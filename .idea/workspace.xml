@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="ingame - пытаюсь сделать NavController">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/demo2_jvm_1_0_SNAPSHOT.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/demo2_jvm_1_0_SNAPSHOT.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Сделал NavController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/NavigatorController.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,30 +82,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmMain/kotlin/navigation&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_directory_selection": "C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin",
+    "last_opened_file_path": "/Users/nikita/Documents/demo2/src/jvmMain/resources/drawable",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/kotlin/navigation" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/icons" />
-      <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
       <recent name="$PROJECT_DIR$/src/jvmMain/resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -128,7 +124,7 @@
       <recent name="pastebin" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.Cacert3">
+  <component name="RunManager" selected="Kotlin.Navigation">
     <configuration name="StartTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -186,10 +182,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+    <configuration name="Navigation" type="JetRunConfigurationType" temporary="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="demo2.jvmMain" />
       <shortenClasspath name="NONE" />
+      <option name="VM_PARAMETERS" value="-Djavax.net.ssl.trustStore=cacerts -Djavax.net.ssl.trustStorePassword=changeit" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -206,15 +203,15 @@
       <item itemvalue="Gradle.StartTest.qwe" />
       <item itemvalue="Kotlin.Cacert3" />
       <item itemvalue="Kotlin.Unnamed" />
-      <item itemvalue="Kotlin.MainKt" />
+      <item itemvalue="Kotlin.Navigation" />
       <item itemvalue="Kotlin.Main01Kt" />
       <item itemvalue="Kotlin.Main2Kt" />
       <item itemvalue="Kotlin.Cacerts" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.Navigation" />
         <item itemvalue="Kotlin.Cacerts" />
-        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.Main01Kt" />
         <item itemvalue="Kotlin.Main2Kt" />
         <item itemvalue="Gradle.StartTest.qwe" />
@@ -475,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688225600024</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Сделал NavController">
+      <created>1688234828205</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1688234828206</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -513,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="3 - Добавил получение текущей сессии, получение информации из пастебина, получение всех клиентов из ddragon" />
     <MESSAGE value="4" />
     <MESSAGE value="5 - добавил trustStore" />
     <MESSAGE value="6 - Заработал JUnit 4" />
@@ -538,7 +541,8 @@
     <MESSAGE value="Рефакторинг" />
     <MESSAGE value="Добавил работу на Windows" />
     <MESSAGE value="ingame - пытаюсь сделать NavController" />
-    <option name="LAST_COMMIT_MESSAGE" value="ingame - пытаюсь сделать NavController" />
+    <MESSAGE value="Сделал NavController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделал NavController" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -580,6 +584,11 @@
           <url>file://$PROJECT_DIR$/src/jvmTest/java/courses/ImageKtTest.kt</url>
           <line>18</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
+          <line>10</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

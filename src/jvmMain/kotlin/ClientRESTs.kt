@@ -30,11 +30,11 @@ object ClientRESTs {
         var session = getData("lol-champ-select/v1/session", data["port"], data["token"])
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
-        while (jsonNode["httpStatus"]!=null && jsonNode["httpStatus"].asText() == "404"){
-            Thread.sleep(10_000)
+//        while (jsonNode["httpStatus"]!=null && jsonNode["httpStatus"].asText() == "404"){
+//            Thread.sleep(10_000)
             session = getData("lol-champ-select/v1/session", data["port"], data["token"])
             jsonNode= mapper.readTree(session)
-        }
+//        }
         return session
     }
 

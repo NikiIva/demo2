@@ -25,8 +25,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
 @Composable
-fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String, championInfoKey:String, playerId:String) { //у меня сейчас summonerId, возможно, надо accountId
-    println("PlayerId=$playerId")
+fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String) {
     Row(
         modifier = Modifier.padding(3.dp),
         verticalAlignment = Alignment.CenterVertically
@@ -75,7 +74,7 @@ fun makeSummonerAndChampion(summonerName:String, ddragonChampionInfoName:String,
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun makeIconWithSnakeBar(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
+fun makeIconWithSnackBar(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:ScaffoldState){
     TooltipArea(
         tooltip = {
             Surface(
@@ -200,6 +199,6 @@ fun makeExtraInfoBox(hint: Hint, coroutineScope: CoroutineScope, scaffoldState:S
 
 fun main() = application {
     Window(onCloseRequest = ::exitApplication) {
-        makeSummonerAndChampion("qwe", "Aatrox", "266", "qwe")
+        makeSummonerAndChampion("qwe", "Aatrox")
     }
 }

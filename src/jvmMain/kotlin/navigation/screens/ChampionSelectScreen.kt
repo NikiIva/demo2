@@ -17,7 +17,7 @@ import cache.Cache
 import hints.HintType
 import kotlinx.coroutines.delay
 import makeExtraInfoBox
-import makeIconWithSnakeBar
+import makeIconWithSnackBar
 import makeSummonerAndChampion
 import navcontroller.NavController
 
@@ -32,17 +32,13 @@ fun ChampionSelect(
     ) {
         Text(navController.currentScreen.value)
         val session = ClientRESTs.getSession()
-        if (!session.contains("errorCode")) {   //сделать в цикле запросы
+        if (!session.contains("errorCode")) {
             App()
         }
         else {
             println("Не удалось получить сессию выбора чемпионов, ничего не выводим")
-            Button(
-                onClick = {
-                    navController.navigate(Screen.InGame.name)
-                }) {
-                Text("Navigate to In Game")
-            }
+            println("Переходим на экран InGame")
+            navController.navigate(Screen.InGame.name)
         }
     }
 }
@@ -231,7 +227,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
@@ -241,7 +237,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.DAMAGE_RECEIVED),
                             coroutineScope,
                             scaffoldState
@@ -255,7 +251,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ABILITY_HASTE), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.ABILITY_HASTE), coroutineScope, scaffoldState)
 //                        Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
                     Box(
@@ -266,7 +262,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.ATTACK_SPEED_SCALING),
                             coroutineScope,
                             scaffoldState
@@ -281,7 +277,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.SHIELD_MODIFIER),
                             coroutineScope,
                             scaffoldState
@@ -295,7 +291,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.HEALING_MODIFIER),
                             coroutineScope,
                             scaffoldState
@@ -309,7 +305,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.TENACITY), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.TENACITY), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
@@ -319,7 +315,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.ENERGY_REGENERATION),
                             coroutineScope,
                             scaffoldState
@@ -333,7 +329,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
                     }
 
                 }
@@ -341,9 +337,7 @@ private fun makeRow() {
                     Row() {
                         makeSummonerAndChampion(
                             summonerName[i],
-                            ddragonChampionInfoName[i],
-                            championInfoKey[i],
-                            accountId[i]
+                            ddragonChampionInfoName[i]
                         )
                         Box(
                             modifier = Modifier
@@ -512,7 +506,7 @@ fun toIntegerWithPlus(string:String?):String{
 }
 
 
-private fun getColor(value: String, greaterBetter: Boolean, borderValue: Double): Color {
+fun getColor(value: String, greaterBetter: Boolean, borderValue: Double): Color {
     val doubleValue = value.toDoubleOrNull()
     if (doubleValue == null) {
         return Color.Gray

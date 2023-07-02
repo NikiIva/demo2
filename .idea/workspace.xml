@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Сделал NavController">
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил отображение информации о лобби в соответсвующий экран">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ClientRESTs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -479,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688234828206</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Добавил отображение информации о лобби в соответсвующий экран">
+      <created>1688237267536</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1688237267536</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -504,7 +513,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="qwe" />
+                        <option value="inGame" />
                       </list>
                     </value>
                   </entry>
@@ -517,7 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="4" />
     <MESSAGE value="5 - добавил trustStore" />
     <MESSAGE value="6 - Заработал JUnit 4" />
     <MESSAGE value="7 - Почистил от ненужных репозиториев JUnit 4" />
@@ -542,7 +550,8 @@
     <MESSAGE value="Добавил работу на Windows" />
     <MESSAGE value="ingame - пытаюсь сделать NavController" />
     <MESSAGE value="Сделал NavController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Сделал NavController" />
+    <MESSAGE value="Добавил отображение информации о лобби в соответсвующий экран" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил отображение информации о лобби в соответсвующий экран" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,6 +598,11 @@
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
           <line>10</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
+          <line>65</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -35,10 +35,12 @@ object Start {
 
     fun runGame() : ArrayList<UIRow> {
         val session = ServerRESTs.mockGame1()
+//        val session = ServerRESTs.getSession()
+
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
         jsonNode = jsonNode.get("participants")
-        val summoners = ArrayList<InGameSummonerInfo>()
+        var summoners = ArrayList<InGameSummonerInfo>()
         val currentSummonerInfo = ClientRESTs.getCurrentSummonerInfo()
         val currentSummonerInfoNode = mapper.readTree(currentSummonerInfo)
         val currentSummonerName = currentSummonerInfoNode.get("displayName").textValue()
@@ -60,7 +62,8 @@ object Start {
         }
         val champions = Cache.getAllChampions()?.champions
         val uiRow = ArrayList<UIRow>()
-        for (summoner in summoners) {
+        val sortedBy = summoners.sortedByDescending{ it.isAlly }
+        for (summoner in sortedBy) {
             uiRow.add(UIRow(inGameSummonerInfo = summoner,
                 championInfo = GetAllChampionsService.getChampionById(summoner.championId, champions)))
         }

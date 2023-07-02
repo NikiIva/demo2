@@ -203,7 +203,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.DAMAGE_DEALT), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
@@ -213,7 +213,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.DAMAGE_RECEIVED),
                             coroutineScope,
                             scaffoldState
@@ -227,7 +227,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.ABILITY_HASTE), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.ABILITY_HASTE), coroutineScope, scaffoldState)
 //                        Text(text = "ability  haste", style = TextStyle(color = Color.White, fontSize = 14.sp))
                     }
                     Box(
@@ -238,7 +238,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.ATTACK_SPEED_SCALING),
                             coroutineScope,
                             scaffoldState
@@ -253,7 +253,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.SHIELD_MODIFIER),
                             coroutineScope,
                             scaffoldState
@@ -267,7 +267,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.HEALING_MODIFIER),
                             coroutineScope,
                             scaffoldState
@@ -281,7 +281,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.TENACITY), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.TENACITY), coroutineScope, scaffoldState)
                     }
                     Box(
                         modifier = Modifier
@@ -291,7 +291,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(
+                        makeIconWithSnackBar(
                             Cache.getHintByType(HintType.ENERGY_REGENERATION),
                             coroutineScope,
                             scaffoldState
@@ -305,7 +305,7 @@ private fun makeRow() {
                             .background(color = color.value),
                         contentAlignment = Alignment.Center
                     ) {
-                        makeIconWithSnakeBar(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
+                        makeIconWithSnackBar(Cache.getHintByType(HintType.EXTRA), coroutineScope, scaffoldState)
                     }
 
                 }
@@ -313,9 +313,7 @@ private fun makeRow() {
                     Row() {
                         makeSummonerAndChampion(
                             summonerName[i],
-                            ddragonChampionInfoName[i],
-                            championInfoKey[i],
-                            accountId[i]
+                            ddragonChampionInfoName[i]
                         )
                         Box(
                             modifier = Modifier

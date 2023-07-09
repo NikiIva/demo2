@@ -6,7 +6,9 @@ object SessionUtils {
     fun getBenchChampionIds(jsonNode: JsonNode) : List<String> {
         val ret = ArrayList<String>()
         val benchChampions = jsonNode.get("benchChampions")
-        for (i in benchChampions){
+        print("benchChampions:${jsonNode}}")
+        for (i in benchChampions){  //todo: выбило когла из лобби в начало игры
+            //benchChampions:{"errorCode":"RPC_ERROR","httpStatus":404,"implementationDetails":{},"message":"No active delegate"}}
             ret.add(i.get("championId").asInt().toString())
         }
         return ret

@@ -33,7 +33,7 @@ fun ChampionSelect(
         Text(navController.currentScreen.value)
         val session = ClientRESTs.getSession()
         if (!session.contains("errorCode")) {
-            App()
+            App(navController)
         }
         else {
             println("Не удалось получить сессию выбора чемпионов, ничего не выводим")
@@ -45,7 +45,7 @@ fun ChampionSelect(
 
 @Composable
 @Preview
-fun App() {
+fun App(navController: NavController) {
     MaterialTheme {
         makeRow()
     }

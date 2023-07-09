@@ -1,13 +1,26 @@
+import DTO.ServerSummonerInfo
 import cache.Cache
+import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.databind.ObjectMapper
 import org.apache.http.HttpEntity
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.impl.client.HttpClientBuilder
 import org.apache.http.util.EntityUtils
+import java.lang.Exception
 
 object ServerRESTs {
 
-    fun getEncryptedSummonerInfo(summonerName: String) : String {
-        val url = "https://ru.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${Cache.getApiKey()}"
+    /**
+     * accountId: Encrypted account ID. Max length 56 characters.
+     * profileIcon: ID of the summoner icon associated with the summoner.
+     * revisionDate: Date summoner was last modified specified as epoch milliseconds. The following events will update this timestamp: summoner name change, summoner level change, or profile icon change.
+     * name: Summoner name.
+     * id: Encrypted summoner ID. Max length 63 characters.
+     * puuid: Encrypted PUUID. Exact length of 78 characters.
+     * summonerLevel: Summoner level associated with the summoner.
+     */
+    fun getEncryptedSummonerInfo(summonerName: String) : ServerSummonerInfo {
+        val url = "https://ru.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${Cache.getAramApiKey()}"
         val request = HttpGet(url)
 
         HttpClientBuilder.create()
@@ -18,15 +31,33 @@ object ServerRESTs {
                     if (entity != null) {
                         val result: String = EntityUtils.toString(entity)
                         print(result)
-                        return result
+                        val versionJson = ObjectMapper().readValue(
+                            result,
+                            JsonNode::class.java
+                        )
+                        try {
+                            return ServerSummonerInfo(
+                                versionJson.get("id").textValue(),
+                                versionJson.get("accountId").textValue(),
+                                versionJson.get("puuid").textValue(),
+                                versionJson.get("name").textValue(),
+                                versionJson.get("profileIconId").intValue().toString(),
+                                versionJson.get("revisionDate").longValue(),
+                                versionJson.get("summonerLevel").intValue().toString()
+                            )
+                        }
+                        catch (exception : Exception) {
+                            throw java.lang.RuntimeException("Не удалось получить информацию по аккаунту", exception)
+                        }
+
                     }
                 }
             }
         throw RuntimeException("Не удалось получить данные для запроса $url")
     }
 
-    fun getSession() : String {
-        val url = "https://ru.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/yjHnPKitY4h3wxBdMo9Fif8aC_OHtS0Bgf7AH79ngqZO?api_key=${Cache.getApiKey()}"
+    fun getSession(summonerName:String) : String {
+        val url = "https://ru.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/${getEncryptedSummonerInfo(summonerName).id}?api_key=${Cache.getAramApiKey()}"
         val request = HttpGet(url)
 
         HttpClientBuilder.create()

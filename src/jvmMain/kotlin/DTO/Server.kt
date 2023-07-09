@@ -16,5 +16,14 @@ data class InGameSummonerInfo(
     val championId: String?,
     val summonerName : String?,
     val isAlly : Boolean
-) {
-}
+)
+
+data class ServerSummonerInfo(
+    val id: String?,
+    val accountId: String?,
+    val puuid: String?,
+    val name: String?,
+    val profileIconId: String?,
+    val revisionDate: Long?,
+    val summonerName: String?
+)

@@ -33,13 +33,13 @@ object Start {
         return uiRow
     }
 
-    fun runGame() : ArrayList<UIRow> {
-        val session = ServerRESTs.mockGame1()
-//        val session = ServerRESTs.getSession()
+    fun runGame(session: String) : ArrayList<UIRow> {
+//        val session = ServerRESTs.mockGame1()
+//        val session = ServerRESTs.getSession(summonerName)
 
         val mapper = ObjectMapper()
         var jsonNode: JsonNode = mapper.readTree(session)
-        jsonNode = jsonNode.get("participants")
+        jsonNode = jsonNode.get("participants") //на этапе загрузки NPE
         var summoners = ArrayList<InGameSummonerInfo>()
         val currentSummonerInfo = ClientRESTs.getCurrentSummonerInfo()
         val currentSummonerInfoNode = mapper.readTree(currentSummonerInfo)

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил отображение информации о лобби в соответсвующий экран">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_07_2023__18_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_07_2023__18_12__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/MakeSummonerAndChampion.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ServerRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ServerRESTs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/StartTest.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,24 +88,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_directory_selection": "C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin",
-    "last_opened_file_path": "/Users/nikita/Documents/demo2/src/jvmMain/resources/drawable",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Nikita/IdeaProjects/demo2/src/jvmTest/kotlin&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nikita/Documents/demo2/src/jvmMain/resources/drawable&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/jvmMain/resources/drawable" />
@@ -127,7 +131,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.Navigation">
-    <configuration name="StartTest.qwe" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ServerRESTsTest.testEncryptedId" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -140,7 +144,7 @@
           <list>
             <option value=":cleanJvmTest" />
             <option value=":jvmTest" />
-            <option value="--tests &quot;StartTest.qwe&quot;" />
+            <option value="--tests &quot;ServerRESTsTest.testEncryptedId&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -148,6 +152,31 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="ServerRESTsTest.testEncryptedId1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanJvmTest" />
+            <option value=":jvmTest" />
+            <option value="--tests &quot;ServerRESTsTest.testEncryptedId1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="Cacert3" type="JetRunConfigurationType">
@@ -176,14 +205,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="courses.Main2Kt" />
-      <module name="demo2.jvmMain" />
-      <shortenClasspath name="NONE" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Navigation" type="JetRunConfigurationType" temporary="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="demo2.jvmMain" />
@@ -202,21 +223,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.StartTest.qwe" />
+      <item itemvalue="Gradle.ServerRESTsTest.testEncryptedId1" />
+      <item itemvalue="Gradle.ServerRESTsTest.testEncryptedId" />
       <item itemvalue="Kotlin.Cacert3" />
       <item itemvalue="Kotlin.Unnamed" />
       <item itemvalue="Kotlin.Navigation" />
       <item itemvalue="Kotlin.Main01Kt" />
-      <item itemvalue="Kotlin.Main2Kt" />
       <item itemvalue="Kotlin.Cacerts" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.Navigation" />
+        <item itemvalue="Gradle.ServerRESTsTest.testEncryptedId1" />
+        <item itemvalue="Gradle.ServerRESTsTest.testEncryptedId" />
         <item itemvalue="Kotlin.Cacerts" />
         <item itemvalue="Kotlin.Main01Kt" />
-        <item itemvalue="Kotlin.Main2Kt" />
-        <item itemvalue="Gradle.StartTest.qwe" />
       </list>
     </recent_temporary>
   </component>
@@ -572,16 +593,6 @@
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt</url>
-          <line>16</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/jvmTest/kotlin/StartTest.kt</url>
-          <line>8</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/jvmTest/java/courses/ImageKtTest.kt</url>
           <line>25</line>
           <properties>
@@ -596,13 +607,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
-          <line>10</line>
-          <option name="timeStamp" value="30" />
+          <line>65</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
-          <line>65</line>
-          <option name="timeStamp" value="31" />
+          <line>41</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt</url>
+          <line>8</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

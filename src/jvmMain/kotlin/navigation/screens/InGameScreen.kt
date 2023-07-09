@@ -33,27 +33,32 @@ fun InGame(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        InGameApp()
+        val session = remember { ServerRESTs.getSession("LightWin")}
+        println("Произвели запрос к серверу для активной сессии")
+        if (session.contains("404")) {
+            Text(text = "Не удалось найти игру")
+            println("Не удалось найти игру")
+        }
+        else {
+            InGameApp(session)
+        }
     }
 }
 
 
 @Composable
 @Preview
-fun InGameApp() {
+fun InGameApp(session : String) {
     MaterialTheme {
-        makeRow()
+        makeRow(session)
     }
 }
 
 
 @Composable
-private fun makeRow() {
+private fun makeRow(session: String) {
     val uiRows = remember {
-        mutableStateOf(Start.runGame(
-//            ClientRESTs.getSession()
-//            ServerRESTs.mockGame()
-        ))
+        mutableStateOf(Start.runGame(session))
     }
 
     val summonerName = remember {

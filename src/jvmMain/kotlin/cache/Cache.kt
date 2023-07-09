@@ -26,8 +26,8 @@ object Cache {
         return versionJson.get(0).textValue()
     }
 
-    fun getApiKey():String {
-        return "RGAPI-c9ac4676-7b13-479b-97b9-34d409dacff5"
+    fun getAramApiKey():String {
+        return "RGAPI-1a65069d-752b-40fa-866e-13bead35447b"
     }
 
     fun getAllChampions(): AllChampions? {

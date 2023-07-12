@@ -1,5 +1,6 @@
 import androidx.compose.runtime.*
 import kotlinx.coroutines.delay
+import navcontroller.NavController
 
 
 object SessionUpdate {
@@ -20,8 +21,9 @@ object SessionUpdate {
         energy : MutableList<String>,
         ddragonChampionInfoName : MutableList<String>,
         extra : MutableList<String>,
-        q : MutableState<Int>
-    ) {
+        q : MutableState<Int>,
+        navController: NavController
+    ) : Boolean {
         println("Производим обновление сессии")
         var newSession = "null"
         q.value++
@@ -32,6 +34,13 @@ object SessionUpdate {
             newSession = ClientRESTs.getSession()
 //            newSession = ClientRESTs.mockSession()
         }
+        if (newSession.contains("errorCode")) {
+            println("обновление сессии содержит errorCode, переключаем страницу")
+            navController.navigate(Screen.Landing.name)
+            return false
+//            println("этого сообещние ябыть не должно 1")
+        }
+        println("этого сообещние ябыть не должно 2")
         uiRows.value = Start.run(newSession)
 //                val newSession = ClientRESTs.getSession()
 //                    val session = ClientRESTs.mockSession1()
@@ -53,5 +62,6 @@ object SessionUpdate {
             ddragonChampionInfoName[i] = run[i].championInfo?.balance?.ddragonChampionName ?: "0.0"
             extra[i] = run[i].championInfo?.balance?.extra ?: ""
         }
+        return true
     }
 }

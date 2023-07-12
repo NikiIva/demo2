@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Добавил отображение информации о лобби в соответсвующий экран">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_07_2023__18_12__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_01_07_2023__18_12__Changes_.xml" afterDir="false" />
+    <list default="true" id="8c3ee4b3-57a6-4b08-9e32-bd713309d5a1" name="Changes" comment="Исправляю ошибку с в окончанием времени на выборе чемпионов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/DTO/Server.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/ServerRESTs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/ServerRESTs.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Start123.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/cache/Cache.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/InGameScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmTest/kotlin/ServerRESTsTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jvmTest/kotlin/StartTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/Main3.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/SessionUpdate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/jvmMain/kotlin/navigation/screens/ChampionSelectScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -509,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688237267536</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Исправляю ошибку с в окончанием времени на выборе чемпионов">
+      <created>1688918179220</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1688918179220</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -547,7 +548,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="5 - добавил trustStore" />
     <MESSAGE value="6 - Заработал JUnit 4" />
     <MESSAGE value="7 - Почистил от ненужных репозиториев JUnit 4" />
     <MESSAGE value="8 - после рефакторинга" />
@@ -572,7 +572,8 @@
     <MESSAGE value="ingame - пытаюсь сделать NavController" />
     <MESSAGE value="Сделал NavController" />
     <MESSAGE value="Добавил отображение информации о лобби в соответсвующий экран" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил отображение информации о лобби в соответсвующий экран" />
+    <MESSAGE value="Исправляю ошибку с в окончанием времени на выборе чемпионов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправляю ошибку с в окончанием времени на выборе чемпионов" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -47,12 +47,12 @@ fun ChampionSelect(
 @Preview
 fun App(navController: NavController) {
     MaterialTheme {
-        makeRow()
+        makeRow(navController)
     }
 }
 
 @Composable
-private fun makeRow() {
+private fun makeRow(navController: NavController) {
     val uiRows = remember {
         mutableStateOf(Start.run(
             ClientRESTs.getSession()
@@ -455,11 +455,14 @@ private fun makeRow() {
 
 
             LaunchedEffect(Unit) {
-                while (true) {
-                    delay(5_000)
-                    SessionUpdate.updateSession(uiRows, summonerName, accountId, championInfoName,
-                        championInfoKey, damageDealt, damageReceived, abilityHaste, attackSpeed,
-                        shield, healing, tenacity, energy, ddragonChampionInfoName, extra, q)
+                var updateSuccess = true
+                while (updateSuccess) {
+                        delay(5_000)
+                        updateSuccess = SessionUpdate.updateSession(
+                            uiRows, summonerName, accountId, championInfoName,
+                            championInfoKey, damageDealt, damageReceived, abilityHaste, attackSpeed,
+                            shield, healing, tenacity, energy, ddragonChampionInfoName, extra, q, navController
+                        )
                 }
             }
         }

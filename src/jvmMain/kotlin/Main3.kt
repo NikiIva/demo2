@@ -431,14 +431,14 @@ private fun makeRow() {
             }
 
 
-            LaunchedEffect(Unit) {
-                while (true) {
-                    delay(5_000)
-                    SessionUpdate.updateSession(uiRows, summonerName, accountId, championInfoName,
-                        championInfoKey, damageDealt, damageReceived, abilityHaste, attackSpeed,
-                        shield, healing, tenacity, energy, ddragonChampionInfoName, extra, q)
-                }
-            }
+//            LaunchedEffect(Unit) {
+//                while (true) {
+//                    delay(5_000)
+//                    SessionUpdate.updateSession(uiRows, summonerName, accountId, championInfoName,
+//                        championInfoKey, damageDealt, damageReceived, abilityHaste, attackSpeed,
+//                        shield, healing, tenacity, energy, ddragonChampionInfoName, extra, q, null)
+//                }
+//            }
         }
     }
 }
